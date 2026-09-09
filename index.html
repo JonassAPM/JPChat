@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JPChat | Mensajería P2P 100% Descentralizada y Privada</title>
+  <meta name="description" content="JPChat es la aplicación de mensajería peer-to-peer (P2P) sin servidores centrales. Cifrado de extremo a extremo, llamadas directas, stickers de WhatsApp y máxima privacidad sin número de teléfono.">
+  <meta name="theme-color" content="#0F141C">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+</head>
+<body>
+
+  <!-- Ambient Glowing Background Lights -->
+  <div class="ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="JPChat Inicio">
+        <div class="logo-badge">
+          <img src="logo.svg" alt="JPChat Logo">
+        </div>
+        <span class="brand-name">JPChat</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#como-funciona" class="nav-link">¿Cómo Funciona?</a></li>
+          <li><a href="#caracteristicas" class="nav-link">Funciones</a></li>
+          <li><a href="#comparativa" class="nav-link">Comparativa</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="descargas.html" class="nav-link">Descargas</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="descargas.html" class="btn btn-primary" id="headerDownloadBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Descargar APK</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Abrir Menú" aria-expanded="false">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="inicio">
+    <div class="container hero-grid">
+      
+      <!-- Text & Value Proposition -->
+      <div class="hero-content">
+        <div class="badge-tag">
+          <span class="pulse-dot"></span>
+          <span>100% P2P & Cero Servidores Centrales</span>
+        </div>
+
+        <h1 class="hero-title">
+          Mensajería privada y directa <br>
+          <span class="text-gradient">sin intermediarios ni espías.</span>
+        </h1>
+
+        <p class="hero-description">
+          JPChat revoluciona la comunicación eliminando por completo los servidores centrales en la nube. Tus chats, archivos multimedia y llamadas viajan directamente de teléfono a teléfono. Sin número telefónico, sin correos y sin rastreo.
+        </p>
+
+        <div class="hero-actions">
+          <a href="descargas.html" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Obtener JPChat v1.0.0</span>
+          </a>
+          <a href="#como-funciona" class="btn btn-secondary btn-lg">
+            <span>Conoce la Arquitectura</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-item">
+            <span class="highlight-value text-gradient-blue">0</span>
+            <span class="highlight-label">Servidores en la nube</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-value">100%</span>
+            <span class="highlight-label">Cifrado punto a punto</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-value text-gradient">0%</span>
+            <span class="highlight-label">Telemetría y registros</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CSS Smartphone UI Showcase Mockup -->
+      <div class="phone-mockup-wrapper">
+        <div class="phone-glow-bg"></div>
+        <div class="phone-frame">
+          <div class="phone-notch">
+            <div class="phone-camera"></div>
+            <div class="phone-speaker"></div>
+          </div>
+
+          <div class="phone-screen">
+            <!-- Android Status Bar -->
+            <div class="phone-status-bar">
+              <span>10:45</span>
+              <span>🔒 P2P Directo • 100%</span>
+            </div>
+
+            <!-- In-App Top Bar -->
+            <div class="phone-app-bar">
+              <div class="phone-peer-avatar">AL</div>
+              <div class="phone-peer-info">
+                <div class="phone-peer-name">
+                  <span>Alex (Contacto Seguro)</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#00E5FF">
+                    <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"></path>
+                  </svg>
+                </div>
+                <div class="phone-p2p-badge">Conexión P2P Directa</div>
+              </div>
+              <div class="phone-app-actions">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+              </div>
+            </div>
+
+            <!-- Messages Stream -->
+            <div class="phone-chat-body">
+              <div class="chat-security-banner">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span>Cifrado E2E activo. Cero copias en la nube.</span>
+              </div>
+
+              <!-- Incoming Message (#1E2633) -->
+              <div class="chat-bubble incoming">
+                <span>¿Esta conversación pasa por algún servidor central?</span>
+                <span class="chat-time">10:42</span>
+              </div>
+
+              <!-- Outgoing Message (#005C8A) -->
+              <div class="chat-bubble outgoing">
+                <span>¡Para nada! Los datos viajan directo entre nuestros dispositivos vía P2P. Nadie puede interceptarlo 🛡️</span>
+                <span class="chat-time">10:43 ✓✓</span>
+              </div>
+
+              <!-- WhatsApp Sticker Message -->
+              <div class="chat-sticker-bubble">
+                <div class="sticker-wrapper">
+                  <span>🚀</span>
+                  <span class="sticker-tag">WA Pack</span>
+                </div>
+                <span class="chat-time" style="margin-top: 4px;">10:44 ✓✓</span>
+              </div>
+
+              <!-- Ephemeral Message -->
+              <div class="chat-bubble outgoing">
+                <div class="ephemeral-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>Ver una sola vez</span>
+                </div>
+                <span>Foto confidencial enviada (se destruye al abrirse).</span>
+                <span class="chat-time">10:45 ✓✓</span>
+              </div>
+            </div>
+
+            <!-- Chat Bottom Input Bar -->
+            <div class="phone-chat-input-bar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+              <div class="chat-input-fake">Mensaje privado...</div>
+              <div class="chat-mic-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How P2P Works Section -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag section-tag">Arquitectura P2P</span>
+        <h2 class="section-title">¿Cómo funciona una red sin servidores?</h2>
+        <p class="section-subtitle">Las aplicaciones tradicionales guardan tus datos, metadatos e historial en servidores de grandes corporaciones. JPChat cambia las reglas del juego.</p>
+      </div>
+
+      <div class="p2p-flow-grid">
+        <div class="p2p-step-card">
+          <div class="card-step-num">01</div>
+          <h3 class="p2p-step-title">Identidad Criptográfica</h3>
+          <p class="p2p-step-desc">
+            No necesitas dar tu número telefónico ni tu correo electrónico. Tu dispositivo genera un par de claves criptográficas seguras. Tu clave pública es tu identidad única.
+          </p>
+        </div>
+
+        <div class="p2p-step-card">
+          <div class="card-step-num">02</div>
+          <h3 class="p2p-step-title">Comunicación Directa</h3>
+          <p class="p2p-step-desc">
+            Ya sea en una misma red Wi-Fi/LAN o a través de canales P2P descentralizados, los teléfonos se conectan directamente entre sí mediante sockets protegidos.
+          </p>
+        </div>
+
+        <div class="p2p-step-card">
+          <div class="card-step-num">03</div>
+          <h3 class="p2p-step-title">Almacenamiento 100% Local</h3>
+          <p class="p2p-step-desc">
+            Tus mensajes y multimedia solo existen en la memoria física de tu dispositivo (SQLite cifrado). Si tú borras algo, no queda ninguna copia residual en ningún servidor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Showcase Grid -->
+  <section class="section" id="caracteristicas" style="background: rgba(22, 28, 38, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag section-tag">Potencia y Privacidad</span>
+        <h2 class="section-title">Todas las funciones que necesitas</h2>
+        <p class="section-subtitle">Sin comprometer tu seguridad ni sacrificar la experiencia de usuario.</p>
+      </div>
+
+      <div class="features-grid">
+        
+        <!-- Feature 1: Stickers de WhatsApp -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title">Importa Stickers de WhatsApp</h3>
+          <p class="feature-desc">
+            Trae tus paquetes de stickers favoritos de WhatsApp a JPChat con un solo clic. Conserva tus memes y expresiones preferidas en un entorno 100% privado.
+          </p>
+        </div>
+
+        <!-- Feature 2: Llamadas P2P -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Llamadas y Audio P2P</h3>
+          <p class="feature-desc">
+            Voz en tiempo real transmitida de manera directa de un teléfono a otro. Sin servidores de grabación intermedia ni escuchas no autorizadas.
+          </p>
+        </div>
+
+        <!-- Feature 3: Mensajes Efímeros -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="feature-title">Mensajes "Ver una sola vez"</h3>
+          <p class="feature-desc">
+            Envía imágenes, notas y documentos confidenciales con autodestrucción inmediata una vez que el destinatario los visualiza en su pantalla.
+          </p>
+        </div>
+
+        <!-- Feature 4: Identidad por Código QR -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </div>
+          <h3 class="feature-title">Emparejamiento por QR</h3>
+          <p class="feature-desc">
+            Añadir a un amigo es tan simple como escanear su código QR o compartir tu clave pública. Tu libreta de contactos personal jamás se sube a internet.
+          </p>
+        </div>
+
+        <!-- Feature 5: Personalización de Temas -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="13.5" cy="6.5" r=".5"></circle>
+              <circle cx="17.5" cy="10.5" r=".5"></circle>
+              <circle cx="8.5" cy="7.5" r=".5"></circle>
+              <circle cx="6.5" cy="12.5" r=".5"></circle>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Temas y Fondo Oscuro</h3>
+          <p class="feature-desc">
+            Personaliza la interfaz y las burbujas de conversación con el esquema visual elegante de la aplicación y un selector completo de colores.
+          </p>
+        </div>
+
+        <!-- Feature 6: Compartir sin censura -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="feature-title">Compartir Archivos Directo</h3>
+          <p class="feature-desc">
+            Transfiere fotos originales, videos recortados y documentos a la máxima velocidad de tu red local o conexión directa, sin compresión forzada destructiva.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Tabs Showcase -->
+  <section class="section tabs-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag section-tag">Explora la Experiencia</span>
+        <h2 class="section-title">Diseñado para la privacidad cotidiana</h2>
+        <p class="section-subtitle">Descubre cómo JPChat combina simplicidad con criptografía avanzada.</p>
+      </div>
+
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="tab-stickers">Stickers de WhatsApp</button>
+        <button class="tab-btn" data-tab="tab-llamadas">Llamadas Directas</button>
+        <button class="tab-btn" data-tab="tab-efimero">Mensajes Efímeros</button>
+        <button class="tab-btn" data-tab="tab-identidad">Identidad Criptográfica</button>
+      </div>
+
+      <!-- Tab 1: Stickers -->
+      <div class="tab-pane active" id="tab-stickers">
+        <div class="tab-info">
+          <h3>Tus stickers favoritos, ahora en un chat privado</h3>
+          <p>
+            No tienes que renunciar a la diversión por elegir privacidad. Con el importador nativo de JPChat, puedes seleccionar cualquier paquete de stickers que tengas en WhatsApp e importarlo automáticamente.
+          </p>
+          <ul class="tab-bullets">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Importación en 1 toque desde WhatsApp al almacenamiento local.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Soporte para stickers estáticos y animados en formato WebP.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Sin telemetría de uso: nadie sabe qué stickers envías.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-visual-card">
+          <div style="font-weight: 700; color: #00E5FF; font-size: 0.9rem;">Colección de Stickers Local</div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; font-size: 2.2rem; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px;">
+            <div>🔥</div>
+            <div>🤖</div>
+            <div>🐱</div>
+            <div>🥑</div>
+            <div>🍕</div>
+            <div>⚡</div>
+            <div>🎉</div>
+            <div>🛡️</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">Packs importados y sincronizados únicamente entre pares autorizados.</p>
+        </div>
+      </div>
+
+      <!-- Tab 2: Llamadas -->
+      <div class="tab-pane" id="tab-llamadas">
+        <div class="tab-info">
+          <h3>Voz y llamadas directas sin pasar por servidores</h3>
+          <p>
+            En las plataformas tradicionales, las llamadas se enrutan a través de servidores que analizan metadatos (duración, hora, participantes). En JPChat, el streaming de audio se realiza punto a punto.
+          </p>
+          <ul class="tab-bullets">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Audio P2P de baja latencia en redes Wi-Fi y celulares.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Cifrado continuo de flujo con claves de sesión efímeras.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Cero registros de llamadas guardados en centros de datos.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-visual-card">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="font-weight: 700; color: #FFFFFF;">Llamada P2P en curso</div>
+            <span style="font-size: 0.8rem; color: #00E676; font-weight: 600;">● Directo (14 ms)</span>
+          </div>
+          <div style="text-align: center; padding: 2rem 1rem;">
+            <div style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #0070F3, #005C8A); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #FFFFFF;">📞</div>
+            <div style="font-weight: 700; font-size: 1.1rem; color: #FFFFFF;">Alex</div>
+            <div style="color: var(--text-secondary); font-size: 0.85rem;">04:23 • Audio Cifrado</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Efímero -->
+      <div class="tab-pane" id="tab-efimero">
+        <div class="tab-info">
+          <h3>Mensajes efímeros que no dejan rastro</h3>
+          <p>
+            Cuando compartes información delicada, quieres estar seguro de que no permanecerá archivada para siempre. La función "Ver una sola vez" elimina el contenido de inmediato tras su apertura.
+          </p>
+          <ul class="tab-bullets">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Autodestrucción automática tras la primera lectura.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Protección contra capturas y almacenamiento en galería.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>El remitente recibe confirmación de destrucción instantánea.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-visual-card">
+          <div style="background: rgba(0, 112, 243, 0.12); border: 1px dashed rgba(0, 112, 243, 0.45); padding: 1.5rem; border-radius: 12px; text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👁️</div>
+            <div style="font-weight: 700; color: #00E5FF;">Contenido de Vista Única</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">
+              "El mensaje ha sido visualizado y eliminado permanentemente de la memoria del teléfono."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: Identidad -->
+      <div class="tab-pane" id="tab-identidad">
+        <div class="tab-info">
+          <h3>Tu identidad pertenece solo a tu dispositivo</h3>
+          <p>
+            Sin empresas intermediarias recolectando tu número de celular, sin vinculación a tu agenda ni a tus cuentas de redes sociales. Tu identidad es una clave criptográfica matemática.
+          </p>
+          <ul class="tab-bullets">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Generación de claves locales mediante curvas elípticas (ECDH).</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Comparte tu QR en persona o envía tu clave pública de forma segura.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Protección total contra secuestro de SIM (SIM-swapping).</span>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-visual-card">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 1rem;">
+            <div style="width: 140px; height: 140px; background: #FFFFFF; border-radius: 12px; padding: 8px; display: flex; align-items: center; justify-content: center;">
+              <svg width="100%" height="100%" viewBox="0 0 24 24" fill="#000000">
+                <path d="M2 2h8v8H2zM4 4v4h4V4zm10-2h8v8h-8zM16 4v4h4V4zM2 14h8v8H2zm2 2v4h4v-4zm14-2h4v4h-4zm-4 4h4v4h-4zm4 0h2v2h-2zm-6-4h2v2h-2zm0 4h2v2h-2zm-4-4h2v2h-2zm0-4h2v2h-2zm4 0h2v2h-2z"/>
+              </svg>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #00E5FF; background: rgba(0,0,0,0.5); padding: 0.4rem 0.8rem; border-radius: 6px;">
+              pubkey:04a9b2...8f3c
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Comparison Table Section -->
+  <section class="section" id="comparativa">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag section-tag">La Diferencia JPChat</span>
+        <h2 class="section-title">Apps Centralizadas vs JPChat</h2>
+        <p class="section-subtitle">Compara la arquitectura de las apps populares frente a la verdadera descentralización.</p>
+      </div>
+
+      <div class="comparison-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>JPChat (P2P Descentralizado)</th>
+              <th>Mensajería Tradicional (WhatsApp, Telegram)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Servidores Centrales</strong></td>
+              <td><span class="status-icon-good">✓ 0 Servidores</span> (Directo entre dispositivos)</td>
+              <td><span class="status-icon-bad">✕ Servidores corporativos obligatorios</span></td>
+            </tr>
+            <tr>
+              <td><strong>Número Telefónico</strong></td>
+              <td><span class="status-icon-good">✓ No requerido</span> (Identidad por Clave Criptográfica)</td>
+              <td><span class="status-icon-bad">✕ Obligatorio</span> (Vinculado a tu identidad real)</td>
+            </tr>
+            <tr>
+              <td><strong>Rastreo de Metadatos</strong></td>
+              <td><span class="status-icon-good">✓ Cero metadatos guardados</span></td>
+              <td><span class="status-icon-bad">✕ Registran quién habla con quién y a qué hora</span></td>
+            </tr>
+            <tr>
+              <td><strong>Almacenamiento de Chats</strong></td>
+              <td><span class="status-icon-good">✓ Exclusivamente en tu móvil</span> (SQLite local)</td>
+              <td><span class="status-icon-bad">✕ Copias de seguridad en nubes accesibles</span></td>
+            </tr>
+            <tr>
+              <td><strong>Stickers de WhatsApp</strong></td>
+              <td><span class="status-icon-good">✓ Importación directa sin pérdidas</span></td>
+              <td><span class="status-icon-bad">✕ Bloqueados dentro de su ecosistema</span></td>
+            </tr>
+            <tr>
+              <td><strong>Resistencia a la Censura</strong></td>
+              <td><span class="status-icon-good">✓ Imposible de bloquear centralizadamente</span></td>
+              <td><span class="status-icon-bad">✕ Vulnerable a bloqueos por IP de servidor</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq" style="background: rgba(22, 28, 38, 0.35);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag section-tag">Dudas Frecuentes</span>
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-subtitle">Todo lo que necesitas saber antes de instalar JPChat.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿JPChat funciona realmente sin ningún servidor?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Sí. JPChat fue concebida desde su núcleo como una arquitectura Peer-to-Peer (P2P). Los mensajes se transfieren directamente a través de sockets en red local (LAN Wi-Fi) o con señalización efímera directa sin retención de datos en ningún servidor central.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cómo me agregan mis amigos si no tengo número de teléfono?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Al instalar la aplicación se genera una clave pública única y un código QR personal. Tus contactos pueden escanear tu QR con su cámara o tú puedes compartirles tu clave pública como texto. Nadie ajeno a ustedes tiene registro de su relación de contacto.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cómo se actualiza la aplicación si no está en Google Play?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Puedes descargar la última versión directamente desde nuestra sección de descargas en GitHub Pages. Además, JPChat soporta actualizaciones entre pares (P2P): si estás conectado por red local con un amigo que tiene una versión más nueva, ¡puedes actualizar directamente desde su dispositivo!
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Es seguro instalar un archivo APK en Android?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Totalmente. El archivo APK es el formato oficial de instalación de Android. Proporcionamos el hash de verificación SHA-256 para que puedas comprobar que el instalador es auténtico y no ha sido alterado por terceros.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Qué versiones de Android son compatibles?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              JPChat es compatible con dispositivos que ejecuten Android 7.0 (API nivel 24) o cualquier versión superior hasta Android 14 y 15.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Responsibility Notice Banner -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="container">
+      <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1.2rem; font-size: 0.9rem; color: var(--text-secondary);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" style="flex-shrink: 0;">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <div>
+          <strong style="color: #FFFFFF;">Aviso de Responsabilidad:</strong> JPChat es una herramienta técnica de software libre y descentralizado. Los desarrolladores no administran servidores, no moderan contenido y se deslindan en su totalidad de cualquier uso indebido o ilegal que cualquier usuario decida darle a la aplicación. Cada individuo es único y soberano responsable de su uso.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Banner -->
+  <section class="section" style="padding-top: 2rem;">
+    <div class="container">
+      <div style="background: linear-gradient(135deg, rgba(0, 112, 243, 0.22), rgba(0, 92, 138, 0.25)); border: 1px solid rgba(0, 112, 243, 0.4); border-radius: var(--radius-xl); padding: 4rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; backdrop-filter: blur(20px);">
+        <h2 style="font-size: clamp(2rem, 3.5vw, 2.6rem); max-width: 700px; color: #FFFFFF;">
+          Toma el control absoluto de tus conversaciones
+        </h2>
+        <p style="max-width: 580px; color: var(--text-secondary); font-size: 1.05rem;">
+          Descarga JPChat hoy mismo de forma libre, gratuita y sin ataduras corporativas.
+        </p>
+        <a href="descargas.html" class="btn btn-primary btn-lg" style="margin-top: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.3"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Descargar APK Gratuito</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-badge">
+              <img src="logo.svg" alt="JPChat Logo">
+            </div>
+            <span class="brand-name">JPChat</span>
+          </div>
+          <p class="footer-desc">
+            La plataforma de comunicación entre pares enfocada en la soberanía digital, el cifrado absoluto y la cero telemetría.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#como-funciona">¿Cómo Funciona?</a></li>
+            <li><a href="#caracteristicas">Características</a></li>
+            <li><a href="#comparativa">Comparativa</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Descargas</h4>
+          <ul class="footer-links">
+            <li><a href="descargas.html">Último APK (v1.0.0)</a></li>
+            <li><a href="descargas.html#guia">Guía de Instalación</a></li>
+            <li><a href="descargas.html#hash">Verificación SHA-256</a></li>
+            <li><a href="descargas.html#requisitos">Requisitos del Sistema</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Privacidad & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="terminos.html">Términos de Servicio</a></li>
+            <li><a href="terminos.html#deslinde">Deslinde de Responsabilidad</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 JPChat. Código abierto, libre y descentralizado.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="terminos.html">Términos</a>
+          <a href="descargas.html">Descargar</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
