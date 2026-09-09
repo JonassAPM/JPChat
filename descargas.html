@@ -6,7 +6,7 @@
   <title>Descargar JPChat APK Oficial | Versión Más Reciente</title>
   <meta name="description" content="Descarga la última versión de JPChat para Android en formato APK directo. Sin intermediarios, sin Google Play y con verificación criptográfica SHA-256.">
   <meta name="theme-color" content="#0F141C">
-  <link rel="stylesheet" href="styles.css?v=2.5">
+  <link rel="stylesheet" href="styles.css?v=3.0">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <noscript>
     <style>
@@ -38,9 +38,9 @@
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="index.html#como-funciona">¿Cómo Funciona?</a></li>
-          <li><a href="index.html#caracteristicas">Características</a></li>
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="index.html#como-funciona" class="nav-link">¿Cómo Funciona?</a></li>
+          <li><a href="index.html#caracteristicas" class="nav-link">Características</a></li>
           <li><a href="descargas.html" class="nav-link active">Descargas</a></li>
           <li><a href="privacidad.html" class="nav-link">Privacidad</a></li>
           <li><a href="condiciones.html" class="nav-link">Condiciones</a></li>
@@ -88,7 +88,7 @@
         </div>
 
         <!-- Download Action Button (GitHub Release Direct Link) -->
-        <a href="https://github.com/JonassAPM/JPChat/releases/download/1.0.0/jpchat-latest.apk" download="jpchat-latest.apk" class="btn btn-primary btn-lg" style="padding: 1.15rem 2.8rem; font-size: 1.15rem;">
+        <a href="https://github.com/JonassAPM/JPChat/releases/download/1.0.0/jpchat-latest.apk" download="jpchat-latest.apk" class="btn btn-primary btn-lg download-action-btn">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -129,7 +129,7 @@
         </div>
 
         <!-- Prominent Disclaimer Notice -->
-        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.2rem 1.6rem; text-align: left; width: 100%; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+        <div class="download-disclaimer">
           <strong style="color: #FFFFFF;">Descargo de Responsabilidad:</strong> JPChat es una herramienta técnica de software provista libremente "tal cual". Los desarrolladores no administran servidores, no recolectan información ni tienen control sobre las comunicaciones de los usuarios, deslindándose formalmente de cualquier responsabilidad penal o civil derivada del uso que terceros decidan darle.
         </div>
 
@@ -150,34 +150,42 @@
       <div class="install-steps-grid">
         <div class="install-step-card reveal delay-1">
           <div class="step-indicator">1</div>
-          <h3 class="step-title">Descarga el APK</h3>
-          <p class="step-desc">
-            Pulsa el botón de descarga superior y acepta la descarga en tu navegador (Chrome, Firefox, Brave, etc.).
-          </p>
+          <div class="step-content">
+            <h3 class="step-title">Descarga el APK</h3>
+            <p class="step-desc">
+              Pulsa el botón de descarga superior y acepta la descarga en tu navegador (Chrome, Firefox, Brave, etc.).
+            </p>
+          </div>
         </div>
 
         <div class="install-step-card reveal delay-2">
           <div class="step-indicator">2</div>
-          <h3 class="step-title">Habilita Orígenes</h3>
-          <p class="step-desc">
-            Si el sistema te lo pide, entra a los Ajustes de la alerta y activa la casilla <em>"Permitir desde esta fuente"</em>.
-          </p>
+          <div class="step-content">
+            <h3 class="step-title">Habilita Orígenes</h3>
+            <p class="step-desc">
+              Si el sistema te lo pide, entra a los Ajustes de la alerta y activa la casilla <em>"Permitir desde esta fuente"</em>.
+            </p>
+          </div>
         </div>
 
         <div class="install-step-card reveal delay-3">
           <div class="step-indicator">3</div>
-          <h3 class="step-title">Presiona Instalar</h3>
-          <p class="step-desc">
-            Toca el archivo descargado desde las notificaciones o tu carpeta de Descargas y selecciona <em>"Instalar"</em>.
-          </p>
+          <div class="step-content">
+            <h3 class="step-title">Presiona Instalar</h3>
+            <p class="step-desc">
+              Toca el archivo descargado desde las notificaciones o tu carpeta de Descargas y selecciona <em>"Instalar"</em>.
+            </p>
+          </div>
         </div>
 
         <div class="install-step-card reveal delay-4">
           <div class="step-indicator">4</div>
-          <h3 class="step-title">Genera tu Identidad</h3>
-          <p class="step-desc">
-            Abre JPChat, crea tu alias personal y empieza a chatear de inmediato. Sin registro ni número telefónico.
-          </p>
+          <div class="step-content">
+            <h3 class="step-title">Genera tu Identidad</h3>
+            <p class="step-desc">
+              Abre JPChat, crea tu alias personal y empieza a chatear de inmediato. Sin registro ni número telefónico.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -268,6 +276,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=2.5"></script>
+  <script src="main.js?v=3.0"></script>
 </body>
 </html>

@@ -80,8 +80,10 @@ function initSmoothScroll() {
         // Update URL hash without instant jump
         history.pushState(null, null, targetId);
 
-        // Smooth scroll with header offset
-        const headerOffset = 90;
+        // Smooth scroll with responsive header & sticky bar offset
+        const isLegalSidebar = document.querySelector('.legal-sidebar') !== null;
+        const isMobile = window.innerWidth <= 1024;
+        const headerOffset = (isLegalSidebar && isMobile) ? 135 : 85;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -204,6 +206,10 @@ function initLegalSidebarObserver() {
         sidebarLinks.forEach(link => {
           if (link.getAttribute('href') === `#${id}`) {
             link.classList.add('active');
+            // Auto-scroll active pill into view on mobile
+            if (window.innerWidth <= 1024 && typeof link.scrollIntoView === 'function') {
+              link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
           } else {
             link.classList.remove('active');
           }

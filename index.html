@@ -6,7 +6,7 @@
   <title>JPChat | Mensajería P2P 100% Descentralizada y Privada</title>
   <meta name="description" content="JPChat es la aplicación de mensajería peer-to-peer (P2P) sin servidores centrales. Cifrado de extremo a extremo, llamadas directas, stickers de WhatsApp y máxima privacidad sin número de teléfono.">
   <meta name="theme-color" content="#0F141C">
-  <link rel="stylesheet" href="styles.css?v=2.5">
+  <link rel="stylesheet" href="styles.css?v=3.0">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <noscript>
     <style>
@@ -218,26 +218,32 @@
       <div class="p2p-flow-grid">
         <div class="p2p-step-card reveal delay-1">
           <div class="card-step-num">01</div>
-          <h3 class="p2p-step-title">Identidad Criptográfica</h3>
-          <p class="p2p-step-desc">
-            No necesitas dar tu número telefónico ni tu correo electrónico. Tu dispositivo genera un par de claves criptográficas seguras. Tu clave pública es tu identidad única.
-          </p>
+          <div class="p2p-step-content">
+            <h3 class="p2p-step-title">Identidad Criptográfica</h3>
+            <p class="p2p-step-desc">
+              No necesitas dar tu número telefónico ni tu correo electrónico. Tu dispositivo genera un par de claves criptográficas seguras. Tu clave pública es tu identidad única.
+            </p>
+          </div>
         </div>
 
         <div class="p2p-step-card reveal delay-2">
           <div class="card-step-num">02</div>
-          <h3 class="p2p-step-title">Comunicación Directa</h3>
-          <p class="p2p-step-desc">
-            Ya sea en una misma red Wi-Fi/LAN o a través de canales P2P descentralizados, los teléfonos se conectan directamente entre sí mediante sockets protegidos.
-          </p>
+          <div class="p2p-step-content">
+            <h3 class="p2p-step-title">Comunicación Directa</h3>
+            <p class="p2p-step-desc">
+              Ya sea en una misma red Wi-Fi/LAN o a través de canales P2P descentralizados, los teléfonos se conectan directamente entre sí mediante sockets protegidos.
+            </p>
+          </div>
         </div>
 
         <div class="p2p-step-card reveal delay-3">
           <div class="card-step-num">03</div>
-          <h3 class="p2p-step-title">Almacenamiento 100% Local</h3>
-          <p class="p2p-step-desc">
-            Tus mensajes y multimedia solo existen en la memoria física de tu dispositivo (SQLite cifrado). Si tú borras algo, no queda ninguna copia residual en ningún servidor.
-          </p>
+          <div class="p2p-step-content">
+            <h3 class="p2p-step-title">Almacenamiento 100% Local</h3>
+            <p class="p2p-step-desc">
+              Tus mensajes y multimedia solo existen en la memoria física de tu dispositivo (SQLite cifrado). Si tú borras algo, no queda ninguna copia residual en ningún servidor.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -264,10 +270,12 @@
               <line x1="15" y1="9" x2="15.01" y2="9"></line>
             </svg>
           </div>
-          <h3 class="feature-title">Importa Stickers de WhatsApp</h3>
-          <p class="feature-desc">
-            Trae tus paquetes de stickers favoritos de WhatsApp a JPChat con un solo clic. Conserva tus memes y expresiones preferidas en un entorno 100% privado.
-          </p>
+          <div class="feature-content">
+            <h3 class="feature-title">Importa Stickers de WhatsApp</h3>
+            <p class="feature-desc">
+              Trae tus paquetes de stickers favoritos de WhatsApp a JPChat con un solo clic. Conserva tus memes y expresiones preferidas en un entorno 100% privado.
+            </p>
+          </div>
         </div>
 
         <!-- Feature 2: Llamadas P2P -->
@@ -277,10 +285,12 @@
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
           </div>
-          <h3 class="feature-title">Llamadas y Audio P2P</h3>
-          <p class="feature-desc">
-            Voz en tiempo real transmitida de manera directa de un teléfono a otro. Sin servidores de grabación intermedia ni escuchas no autorizadas.
-          </p>
+          <div class="feature-content">
+            <h3 class="feature-title">Llamadas y Audio P2P</h3>
+            <p class="feature-desc">
+              Voz en tiempo real transmitida de manera directa de un teléfono a otro. Sin servidores de grabación intermedia ni escuchas no autorizadas.
+            </p>
+          </div>
         </div>
 
         <!-- Feature 3: Mensajes Efímeros -->
@@ -291,10 +301,12 @@
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
           </div>
-          <h3 class="feature-title">Mensajes "Ver una sola vez"</h3>
-          <p class="feature-desc">
-            Envía imágenes, notas y documentos confidenciales con autodestrucción inmediata una vez que el destinatario los visualiza en su pantalla.
-          </p>
+          <div class="feature-content">
+            <h3 class="feature-title">Mensajes "Ver una sola vez"</h3>
+            <p class="feature-desc">
+              Envía imágenes, notas y documentos confidenciales con autodestrucción inmediata una vez que el destinatario los visualiza en su pantalla.
+            </p>
+          </div>
         </div>
 
         <!-- Feature 4: Identidad por Código QR -->
@@ -307,10 +319,12 @@
               <rect x="3" y="14" width="7" height="7"></rect>
             </svg>
           </div>
-          <h3 class="feature-title">Emparejamiento por QR</h3>
-          <p class="feature-desc">
-            Añadir a un amigo es tan simple como escanear su código QR o compartir tu clave pública. Tu libreta de contactos personal jamás se sube a internet.
-          </p>
+          <div class="feature-content">
+            <h3 class="feature-title">Emparejamiento por QR</h3>
+            <p class="feature-desc">
+              Añadir a un amigo es tan simple como escanear su código QR o compartir tu clave pública. Tu libreta de contactos personal jamás se sube a internet.
+            </p>
+          </div>
         </div>
 
         <!-- Feature 5: Personalización de Temas -->
@@ -324,10 +338,12 @@
               <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"></path>
             </svg>
           </div>
-          <h3 class="feature-title">Temas y Fondo Oscuro</h3>
-          <p class="feature-desc">
-            Personaliza la interfaz y las burbujas de conversación con el esquema visual elegante de la aplicación y un selector completo de colores.
-          </p>
+          <div class="feature-content">
+            <h3 class="feature-title">Temas y Fondo Oscuro</h3>
+            <p class="feature-desc">
+              Personaliza la interfaz y las burbujas de conversación con el esquema visual elegante de la aplicación y un selector completo de colores.
+            </p>
+          </div>
         </div>
 
         <!-- Feature 6: Compartir sin censura -->
@@ -341,10 +357,12 @@
               <polyline points="10 9 9 9 8 9"></polyline>
             </svg>
           </div>
-          <h3 class="feature-title">Compartir Archivos Directo</h3>
-          <p class="feature-desc">
-            Transfiere fotos originales, videos recortados y documentos a la máxima velocidad de tu red local o conexión directa, sin compresión forzada destructiva.
-          </p>
+          <div class="feature-content">
+            <h3 class="feature-title">Compartir Archivos Directo</h3>
+            <p class="feature-desc">
+              Transfiere fotos originales, videos recortados y documentos a la máxima velocidad de tu red local o conexión directa, sin compresión forzada destructiva.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -391,7 +409,7 @@
         </div>
         <div class="tab-visual-card reveal-scale">
           <div style="font-weight: 700; color: #00E5FF; font-size: 0.9rem;">Colección de Stickers Local</div>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; font-size: 2.2rem; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px;">
+          <div class="tab-stickers-grid">
             <div>🔥</div>
             <div>🤖</div>
             <div>🐱</div>
@@ -521,6 +539,7 @@
         <p class="section-subtitle">Compara la arquitectura de las apps populares frente a la verdadera descentralización.</p>
       </div>
 
+      <div class="mobile-scroll-hint">Desliza horizontalmente para ver la tabla completa &rarr;</div>
       <div class="comparison-container reveal-scale delay-2">
         <table class="comparison-table">
           <thead>
@@ -641,9 +660,9 @@
   </section>
 
   <!-- Legal Responsibility Notice Banner -->
-  <section class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
+  <section class="section" style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
     <div class="container reveal">
-      <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1.2rem; font-size: 0.9rem; color: var(--text-secondary);">
+      <div class="responsibility-banner">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" style="flex-shrink: 0;">
           <circle cx="12" cy="12" r="10"></circle>
           <line x1="12" y1="8" x2="12" y2="12"></line>
@@ -657,10 +676,10 @@
   </section>
 
   <!-- Bottom CTA Banner -->
-  <section class="section" style="padding-top: 2rem;">
+  <section class="section" style="padding-top: 1.5rem;">
     <div class="container">
-      <div class="reveal-scale" style="background: linear-gradient(135deg, rgba(0, 112, 243, 0.22), rgba(0, 92, 138, 0.25)); border: 1px solid rgba(0, 112, 243, 0.4); border-radius: var(--radius-xl); padding: 4rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; backdrop-filter: blur(20px);">
-        <h2 style="font-size: clamp(2rem, 3.5vw, 2.6rem); max-width: 700px; color: #FFFFFF;">
+      <div class="cta-banner-card reveal-scale">
+        <h2 style="font-size: clamp(1.9rem, 3.5vw, 2.6rem); max-width: 700px; color: #FFFFFF;">
           Toma el control absoluto de tus conversaciones
         </h2>
         <p style="max-width: 580px; color: var(--text-secondary); font-size: 1.05rem;">
@@ -736,6 +755,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=2.5"></script>
+  <script src="main.js?v=3.0"></script>
 </body>
 </html>
