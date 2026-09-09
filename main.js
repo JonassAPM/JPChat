@@ -63,7 +63,9 @@ function initMobileMenu() {
 }
 
 /**
- * Smooth Animated Scroll with Header Offset
+ * Smooth Animated Scroll with Header Offset AND Animation Re-triggering
+ * When the user clicks any anchor link or button, the target section
+ * scrolls into view and its appearance animation reloads seamlessly.
  */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -87,13 +89,26 @@ function initSmoothScroll() {
           top: offsetPosition,
           behavior: 'smooth'
         });
+
+        // Re-trigger entrance animation on target section even if already loaded!
+        retriggerSectionAnimation(targetElement);
       }
     });
   });
+
+  // If page loaded with a URL hash (e.g. descargas.html#guia or index.html#caracteristicas)
+  if (window.location.hash) {
+    const hashTarget = document.querySelector(window.location.hash);
+    if (hashTarget) {
+      setTimeout(() => {
+        retriggerSectionAnimation(hashTarget);
+      }, 350);
+    }
+  }
 }
 
 /**
- * Interactive feature showcase tabs with fade-slide transitions
+ * Interactive feature showcase tabs with fade-slide transitions & animation reload
  */
 function initTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
@@ -112,13 +127,10 @@ function initTabs() {
       tabPanes.forEach(pane => {
         if (pane.id === targetId) {
           pane.style.display = 'grid';
-          // Small delay for CSS opacity transition to trigger
           setTimeout(() => {
             pane.classList.add('active');
-            // Trigger visibility for reveal elements inside the active tab
-            pane.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(child => {
-              child.classList.add('visible');
-            });
+            // Re-trigger entrance animation inside the freshly activated tab
+            retriggerSectionAnimation(pane);
           }, 20);
         } else {
           pane.classList.remove('active');
@@ -263,45 +275,96 @@ function showToast(message) {
 }
 
 /**
- * Scroll Entrance Reveal (Intersection Observer)
- * Animates sections and cards when they enter the viewport
+ * Re-triggers the reveal entrance animation for a given section/element,
+ * ensuring it plays even if it was previously loaded/shown.
+ * Resets opacity & transform, forces a reflow, and cascades elements in smoothly.
+ */
+function retriggerSectionAnimation(targetSection) {
+  if (!targetSection) return;
+
+  const childElements = targetSection.querySelectorAll(
+    '.reveal, .reveal-scale, .reveal-left, .reveal-right'
+  );
+  const elements = targetSection.matches('.reveal, .reveal-scale, .reveal-left, .reveal-right')
+    ? [targetSection, ...childElements]
+    : Array.from(childElements);
+
+  if (elements.length === 0) return;
+
+  // Step 1: Instantly remove visible and disable transition so it resets without backward motion
+  elements.forEach(el => {
+    el.style.transition = 'none';
+    el.classList.remove('visible');
+  });
+
+  // Step 2: Force DOM reflow so browser acknowledges the reset state
+  void targetSection.offsetHeight;
+
+  // Step 3: Re-enable transitions and cascade the entrance as the user arrives
+  setTimeout(() => {
+    elements.forEach((el, index) => {
+      el.style.transition = '';
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, index * 90);
+    });
+  }, 200);
+}
+
+/**
+ * Scroll Entrance Reveal Engine
+ * Orchestrates a progressive cascading entrance on page load (above-the-fold)
+ * and observes elements as the user scrolls through each section.
  */
 function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
-  if (revealElements.length === 0) return;
+  const allRevealElements = document.querySelectorAll(
+    '.reveal, .reveal-scale, .reveal-left, .reveal-right'
+  );
+  if (allRevealElements.length === 0) return;
 
   if (!('IntersectionObserver' in window)) {
-    // Fallback if browser doesn't support IntersectionObserver
-    revealElements.forEach(el => el.classList.add('visible'));
+    allRevealElements.forEach(el => el.classList.add('visible'));
     return;
   }
 
+  const windowHeight = window.innerHeight;
+  const aboveTheFold = [];
+  const belowTheFold = [];
+
+  allRevealElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < windowHeight - 30 && rect.bottom > 0) {
+      aboveTheFold.push(el);
+    } else {
+      belowTheFold.push(el);
+    }
+  });
+
+  // 1. Stagger above-the-fold elements after a short intentional pause (140ms)
+  // so the user visibly witnesses the progressive cascade
+  setTimeout(() => {
+    aboveTheFold.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, index * 90);
+    });
+  }, 140);
+
+  // 2. Observe below-the-fold elements as the user scrolls
   const observerOptions = {
     root: null,
     rootMargin: '0px 0px -40px 0px',
     threshold: 0.08
   };
 
-  const revealObserver = new IntersectionObserver((entries, observer) => {
+  const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Animate once
       }
     });
   }, observerOptions);
 
-  revealElements.forEach(el => {
-    // Check if already in viewport
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      // Small staggered delay for above-the-fold elements
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, 50);
-    } else {
-      revealObserver.observe(el);
-    }
-  });
+  belowTheFold.forEach(el => revealObserver.observe(el));
 }
 
