@@ -277,7 +277,8 @@ function showToast(message) {
 /**
  * Re-triggers the reveal entrance animation for a given section/element,
  * ensuring it plays even if it was previously loaded/shown.
- * Resets opacity & transform, forces a reflow, and cascades elements in smoothly.
+ * Resets the CSS keyframe animation by clearing the visible class, forcing
+ * a reflow, and re-applying it cleanly.
  */
 function retriggerSectionAnimation(targetSection) {
   if (!targetSection) return;
@@ -291,30 +292,22 @@ function retriggerSectionAnimation(targetSection) {
 
   if (elements.length === 0) return;
 
-  // Step 1: Instantly remove visible and disable transition so it resets without backward motion
-  elements.forEach(el => {
-    el.style.transition = 'none';
-    el.classList.remove('visible');
-  });
+  // Step 1: Remove visible class
+  elements.forEach(el => el.classList.remove('visible'));
 
-  // Step 2: Force DOM reflow so browser acknowledges the reset state
+  // Step 2: Force reflow so browser restarts the CSS keyframe animation
   void targetSection.offsetHeight;
 
-  // Step 3: Re-enable transitions and cascade the entrance as the user arrives
+  // Step 3: Re-add visible so animations run from 0% with their staggered delays
   setTimeout(() => {
-    elements.forEach((el, index) => {
-      el.style.transition = '';
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, index * 90);
-    });
-  }, 200);
+    elements.forEach(el => el.classList.add('visible'));
+  }, 60);
 }
 
 /**
  * Scroll Entrance Reveal Engine
- * Orchestrates a progressive cascading entrance on page load (above-the-fold)
- * and observes elements as the user scrolls through each section.
+ * Observes all reveal elements using IntersectionObserver and triggers
+ * GPU-accelerated CSS keyframe animations with built-in progressive delays.
  */
 function initScrollReveal() {
   const allRevealElements = document.querySelectorAll(
@@ -327,34 +320,10 @@ function initScrollReveal() {
     return;
   }
 
-  const windowHeight = window.innerHeight;
-  const aboveTheFold = [];
-  const belowTheFold = [];
-
-  allRevealElements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < windowHeight - 30 && rect.bottom > 0) {
-      aboveTheFold.push(el);
-    } else {
-      belowTheFold.push(el);
-    }
-  });
-
-  // 1. Stagger above-the-fold elements after a short intentional pause (140ms)
-  // so the user visibly witnesses the progressive cascade
-  setTimeout(() => {
-    aboveTheFold.forEach((el, index) => {
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, index * 90);
-    });
-  }, 140);
-
-  // 2. Observe below-the-fold elements as the user scrolls
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.08
+    rootMargin: '0px 0px -20px 0px',
+    threshold: 0.05
   };
 
   const revealObserver = new IntersectionObserver((entries) => {
@@ -365,6 +334,7 @@ function initScrollReveal() {
     });
   }, observerOptions);
 
-  belowTheFold.forEach(el => revealObserver.observe(el));
+  allRevealElements.forEach(el => revealObserver.observe(el));
 }
+
 

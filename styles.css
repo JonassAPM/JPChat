@@ -1596,69 +1596,98 @@ svg {
 }
 
 /* ==========================================================================
-   Scroll Entrance Animations (Scroll Reveal)
+   Scroll Entrance Animations (CSS Keyframes Engine)
    ========================================================================== */
-.reveal {
+
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(42px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes revealLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealRight {
+  0% {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Base hidden states */
+.reveal, .reveal-scale, .reveal-left, .reveal-right {
   opacity: 0;
-  transform: translateY(38px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.reveal {
+  transform: translateY(42px);
 }
 
 .reveal-scale {
-  opacity: 0;
-  transform: scale(0.92) translateY(30px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-scale.visible {
-  opacity: 1;
-  transform: scale(1) translateY(0);
+  transform: scale(0.92) translateY(32px);
 }
 
 .reveal-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
+  transform: translateX(-45px);
 }
 
 .reveal-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transform: translateX(45px);
+}
+
+/* Active animation states */
+.reveal.visible {
+  animation: revealUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-scale.visible {
+  animation: revealScale 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-left.visible {
+  animation: revealLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
+  animation: revealRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Stagger Delays for Grid Elements */
-.delay-1 { transition-delay: 0.12s; }
-.delay-2 { transition-delay: 0.22s; }
-.delay-3 { transition-delay: 0.34s; }
-.delay-4 { transition-delay: 0.46s; }
-.delay-5 { transition-delay: 0.58s; }
-.delay-6 { transition-delay: 0.70s; }
+/* Stagger animation delays */
+.delay-1, .reveal.delay-1.visible, .reveal-scale.delay-1.visible { animation-delay: 0.12s; }
+.delay-2, .reveal.delay-2.visible, .reveal-scale.delay-2.visible { animation-delay: 0.24s; }
+.delay-3, .reveal.delay-3.visible, .reveal-scale.delay-3.visible { animation-delay: 0.36s; }
+.delay-4, .reveal.delay-4.visible, .reveal-scale.delay-4.visible { animation-delay: 0.48s; }
+.delay-5, .reveal.delay-5.visible, .reveal-scale.delay-5.visible { animation-delay: 0.60s; }
+.delay-6, .reveal.delay-6.visible, .reveal-scale.delay-6.visible { animation-delay: 0.72s; }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal-scale, .reveal-left, .reveal-right {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
 
