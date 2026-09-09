@@ -38,23 +38,35 @@
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Inicio</a></li>
-          <li><a href="index.html#como-funciona" class="nav-link">¿Cómo Funciona?</a></li>
-          <li><a href="index.html#caracteristicas" class="nav-link">Características</a></li>
-          <li><a href="descargas.html" class="nav-link active">Descargas</a></li>
-          <li><a href="privacidad.html" class="nav-link">Privacidad</a></li>
-          <li><a href="condiciones.html" class="nav-link">Condiciones</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="index.html#como-funciona" class="nav-link" data-i18n="nav.how_it_works">¿Cómo Funciona?</a></li>
+          <li><a href="index.html#caracteristicas" class="nav-link" data-i18n="nav.features">Características</a></li>
+          <li><a href="descargas.html" class="nav-link active" data-i18n="nav.downloads">Descargas</a></li>
+          <li><a href="privacidad.html" class="nav-link" data-i18n="nav.privacy">Privacidad</a></li>
+          <li><a href="condiciones.html" class="nav-link" data-i18n="nav.conditions">Condiciones</a></li>
+          <li class="mobile-lang-item">
+            <div class="lang-switcher" role="group" aria-label="Idioma">
+              <button type="button" class="lang-btn active" data-lang="es">ES</button>
+              <span class="lang-divider">/</span>
+              <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+          </li>
         </ul>
       </nav>
 
       <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="Selector de idioma">
+          <button type="button" class="lang-btn active" data-lang="es">ES</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
         <a href="#instalador" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span>Descargar Ahora</span>
+          <span data-i18n="nav.download_now">Descargar Ahora</span>
         </a>
         <button class="mobile-toggle" aria-label="Abrir Menú" aria-expanded="false">&#9776;</button>
       </div>
@@ -66,9 +78,9 @@
     <div class="container">
       
       <div class="section-header" style="margin-bottom: 2rem;">
-        <span class="badge-tag section-tag reveal delay-1">Lanzamiento Oficial</span>
-        <h1 class="section-title reveal delay-2">Descarga Directa de JPChat</h1>
-        <p class="section-subtitle reveal delay-3">
+        <span class="badge-tag section-tag reveal delay-1" data-i18n="dl.tag">Lanzamiento Oficial</span>
+        <h1 class="section-title reveal delay-2" data-i18n="dl.title">Descarga Directa de JPChat</h1>
+        <p class="section-subtitle reveal delay-3" data-i18n="dl.subtitle">
           Instala la aplicación en tu dispositivo Android sin rastreo corporativo, sin Google Play y con total soberanía digital.
         </p>
       </div>
@@ -77,12 +89,12 @@
       <div class="download-card-main reveal-scale delay-4">
         <div class="download-version-badge">
           <span class="pulse-dot"></span>
-          <span>Versión Oficial: v1.0.0 (Estable)</span>
+          <span data-i18n="dl.version_badge">Versión Oficial: v1.0.0 (Estable)</span>
         </div>
 
         <div style="text-align: center; max-width: 600px;">
-          <h2 style="font-size: 2rem; margin-bottom: 0.5rem; color: #FFFFFF;">Instalador Oficial de Android</h2>
-          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+          <h2 style="font-size: 2rem; margin-bottom: 0.5rem; color: #FFFFFF;" data-i18n="dl.card_title">Instalador Oficial de Android</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="dl.card_desc">
             Archivo APK firmado de forma auténtica. Libre de publicidad, rastreadores y servicios cerrados.
           </p>
         </div>
@@ -94,42 +106,42 @@
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span>Descargar APK (31.1 MB)</span>
+          <span data-i18n="dl.btn_download">Descargar APK (31.1 MB)</span>
         </a>
 
         <!-- Metadata Grid -->
         <div class="download-meta-grid">
           <div class="download-meta-item">
-            <span class="download-meta-title">Archivo</span>
+            <span class="download-meta-title" data-i18n="dl.meta_file">Archivo</span>
             <span class="download-meta-val">jpchat-latest.apk</span>
           </div>
           <div class="download-meta-item">
-            <span class="download-meta-title">Tamaño</span>
+            <span class="download-meta-title" data-i18n="dl.meta_size">Tamaño</span>
             <span class="download-meta-val">31.1 MB</span>
           </div>
           <div class="download-meta-item">
-            <span class="download-meta-title">Requisitos</span>
+            <span class="download-meta-title" data-i18n="dl.meta_req">Requisitos</span>
             <span class="download-meta-val">Android 7.0+</span>
           </div>
           <div class="download-meta-item">
-            <span class="download-meta-title">Licencia</span>
-            <span class="download-meta-val" style="color: #00E5FF;">Libre / Open</span>
+            <span class="download-meta-title" data-i18n="dl.meta_license">Licencia</span>
+            <span class="download-meta-val" style="color: #00E5FF;" data-i18n="dl.meta_license_val">Libre / Open</span>
           </div>
         </div>
 
         <!-- SHA256 Checksum Card -->
         <div class="hash-card" id="hash">
           <div class="hash-text-box">
-            <span class="hash-label">Firma Criptográfica SHA-256 (Verificación de Integridad)</span>
+            <span class="hash-label" data-i18n="dl.hash_label">Firma Criptográfica SHA-256 (Verificación de Integridad)</span>
             <span class="hash-code" id="hashCode">ECCA55D5B2D7FEAA7CDDFB34FBD8A416A7BA2D55FAC932292DFB891DC9B1BA1C</span>
           </div>
-          <button class="copy-hash-btn" id="copyHashBtn" title="Copiar checksum al portapapeles">
+          <button class="copy-hash-btn" id="copyHashBtn" title="Copiar checksum al portapapeles" data-i18n="dl.copy_btn">
             Copiar Hash
           </button>
         </div>
 
         <!-- Prominent Disclaimer Notice -->
-        <div class="download-disclaimer">
+        <div class="download-disclaimer" data-i18n="dl.disclaimer_text">
           <strong style="color: #FFFFFF;">Descargo de Responsabilidad:</strong> JPChat es una herramienta técnica de software provista libremente "tal cual". Los desarrolladores no administran servidores, no recolectan información ni tienen control sobre las comunicaciones de los usuarios, deslindándose formalmente de cualquier responsabilidad penal o civil derivada del uso que terceros decidan darle.
         </div>
 
@@ -142,17 +154,17 @@
   <section class="section" id="guia">
     <div class="container">
       <div class="section-header reveal">
-        <span class="badge-tag section-tag">Paso a Paso</span>
-        <h2 class="section-title">¿Cómo instalar el APK en tu Android?</h2>
-        <p class="section-subtitle">Instalar aplicaciones fuera de la tienda oficial es un proceso nativo y seguro de Android.</p>
+        <span class="badge-tag section-tag" data-i18n="dl.guide_tag">Paso a Paso</span>
+        <h2 class="section-title" data-i18n="dl.guide_title">¿Cómo instalar el APK en tu Android?</h2>
+        <p class="section-subtitle" data-i18n="dl.guide_subtitle">Instalar aplicaciones fuera de la tienda oficial es un proceso nativo y seguro de Android.</p>
       </div>
 
       <div class="install-steps-grid">
         <div class="install-step-card reveal delay-1">
           <div class="step-indicator">1</div>
           <div class="step-content">
-            <h3 class="step-title">Descarga el APK</h3>
-            <p class="step-desc">
+            <h3 class="step-title" data-i18n="dl.step1_title">Descarga el APK</h3>
+            <p class="step-desc" data-i18n="dl.step1_desc">
               Pulsa el botón de descarga superior y acepta la descarga en tu navegador (Chrome, Firefox, Brave, etc.).
             </p>
           </div>
@@ -161,9 +173,9 @@
         <div class="install-step-card reveal delay-2">
           <div class="step-indicator">2</div>
           <div class="step-content">
-            <h3 class="step-title">Habilita Orígenes</h3>
-            <p class="step-desc">
-              Si el sistema te lo pide, entra a los Ajustes de la alerta y activa la casilla <em>"Permitir desde esta fuente"</em>.
+            <h3 class="step-title" data-i18n="dl.step2_title">Habilita Orígenes</h3>
+            <p class="step-desc" data-i18n="dl.step2_desc">
+              Si el sistema te lo pide, entra a los Ajustes de la alerta y activa la casilla "Permitir desde esta fuente".
             </p>
           </div>
         </div>
@@ -171,9 +183,9 @@
         <div class="install-step-card reveal delay-3">
           <div class="step-indicator">3</div>
           <div class="step-content">
-            <h3 class="step-title">Presiona Instalar</h3>
-            <p class="step-desc">
-              Toca el archivo descargado desde las notificaciones o tu carpeta de Descargas y selecciona <em>"Instalar"</em>.
+            <h3 class="step-title" data-i18n="dl.step3_title">Presiona Instalar</h3>
+            <p class="step-desc" data-i18n="dl.step3_desc">
+              Toca el archivo descargado desde las notificaciones o tu carpeta de Descargas y selecciona "Instalar".
             </p>
           </div>
         </div>
@@ -181,8 +193,8 @@
         <div class="install-step-card reveal delay-4">
           <div class="step-indicator">4</div>
           <div class="step-content">
-            <h3 class="step-title">Genera tu Identidad</h3>
-            <p class="step-desc">
+            <h3 class="step-title" data-i18n="dl.step4_title">Genera tu Identidad</h3>
+            <p class="step-desc" data-i18n="dl.step4_desc">
               Abre JPChat, crea tu alias personal y empieza a chatear de inmediato. Sin registro ni número telefónico.
             </p>
           </div>
@@ -195,24 +207,24 @@
   <section class="section" style="background: rgba(22, 28, 38, 0.4);">
     <div class="container" style="max-width: 840px;">
       <div class="section-header reveal" style="text-align: left; margin-bottom: 2.5rem;">
-        <span class="badge-tag section-tag">Registro de Versiones</span>
-        <h2 class="section-title">Novedades en la Versión 1.0.0</h2>
+        <span class="badge-tag section-tag" data-i18n="dl.changelog_tag">Registro de Versiones</span>
+        <h2 class="section-title" data-i18n="dl.changelog_title">Novedades en la Versión 1.0.0</h2>
       </div>
 
       <div class="reveal-scale" style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem;">
-          <h3 style="font-size: 1.3rem; color: #FFFFFF;">Lanzamiento Inicial v1.0.0 (Build 1)</h3>
-          <span style="font-size: 0.85rem; color: #00E5FF; font-weight: 600;">Lanzamiento Estable</span>
+          <h3 style="font-size: 1.3rem; color: #FFFFFF;" data-i18n="dl.changelog_build">Lanzamiento Inicial v1.0.0 (Build 1)</h3>
+          <span style="font-size: 0.85rem; color: #00E5FF; font-weight: 600;" data-i18n="dl.changelog_status">Lanzamiento Estable</span>
         </div>
 
         <ul style="padding-left: 1.5rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
-          <li><strong>Arquitectura P2P Nativa:</strong> Comunicación de paquetes de datos directa entre pares en red local y señalización de alta eficiencia.</li>
-          <li><strong>Importador de Stickers de WhatsApp:</strong> Posibilidad de importar y utilizar colecciones enteras de stickers directamente desde WhatsApp.</li>
-          <li><strong>Llamadas de Audio P2P:</strong> Transmisión de voz en tiempo real sin servidores intermediarios.</li>
-          <li><strong>Mensajería Efímera:</strong> Modo de visualización única ("Ver una vez") para fotos y mensajes confidenciales con eliminación permanente.</li>
-          <li><strong>Identidad Descentralizada:</strong> Emparejamiento mediante códigos QR y claves públicas criptográficas. Cero necesidad de número telefónico.</li>
-          <li><strong>Personalización de Temas:</strong> Selector de paletas de colores para los chats y modo oscuro elegante para ahorro de batería.</li>
-          <li><strong>Actualizaciones P2P:</strong> Capacidad de transferir y actualizar la app directamente entre teléfonos conectados en la misma red.</li>
+          <li data-i18n="dl.c1"><strong>Arquitectura P2P Nativa:</strong> Comunicación de paquetes de datos directa entre pares en red local y señalización de alta eficiencia.</li>
+          <li data-i18n="dl.c2"><strong>Importador de Stickers de WhatsApp:</strong> Posibilidad de importar y utilizar colecciones enteras de stickers directamente desde WhatsApp.</li>
+          <li data-i18n="dl.c3"><strong>Llamadas de Audio P2P:</strong> Transmisión de voz en tiempo real sin servidores intermediarios.</li>
+          <li data-i18n="dl.c4"><strong>Mensajería Efímera:</strong> Modo de visualización única ("Ver una vez") para fotos y mensajes confidenciales con eliminación permanente.</li>
+          <li data-i18n="dl.c5"><strong>Identidad Descentralizada:</strong> Emparejamiento mediante códigos QR y claves públicas criptográficas. Cero necesidad de número telefónico.</li>
+          <li data-i18n="dl.c6"><strong>Personalización de Temas:</strong> Selector de paletas de colores para los chats y modo oscuro elegante para ahorro de batería.</li>
+          <li data-i18n="dl.c7"><strong>Actualizaciones P2P:</strong> Capacidad de transferir y actualizar la app directamente entre teléfonos conectados en la misma red.</li>
         </ul>
       </div>
     </div>
@@ -229,13 +241,13 @@
             </div>
             <span class="brand-name">JPChat</span>
           </div>
-          <p class="footer-desc">
+          <p class="footer-desc" data-i18n="footer.brand_desc">
             La plataforma de comunicación entre pares enfocada en la soberanía digital, el cifrado absoluto y la cero telemetría.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-col-title">Navegación</h4>
+          <h4 class="footer-col-title" data-i18n="footer.nav_title">Navegación</h4>
           <ul class="footer-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="index.html#como-funciona">¿Cómo Funciona?</a></li>
@@ -245,7 +257,7 @@
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-col-title">Descargas</h4>
+          <h4 class="footer-col-title" data-i18n="footer.downloads_title">Descargas</h4>
           <ul class="footer-links">
             <li><a href="#instalador">Último APK v1.0.0</a></li>
             <li><a href="#guia">Guía de Instalación</a></li>
@@ -254,18 +266,18 @@
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-col-title">Privacidad & Legal</h4>
+          <h4 class="footer-col-title" data-i18n="footer.legal_title">Privacidad & Legal</h4>
           <ul class="footer-links">
-            <li><a href="privacidad.html">Política de Privacidad</a></li>
-            <li><a href="condiciones.html">Condiciones del Servicio</a></li>
-            <li><a href="terminos.html">Términos de Uso</a></li>
-            <li><a href="condiciones.html#deslinde-legal">Deslinde de Responsabilidad</a></li>
+            <li><a href="privacidad.html" data-i18n="footer.privacy_link">Política de Privacidad</a></li>
+            <li><a href="condiciones.html" data-i18n="footer.conditions_link">Condiciones del Servicio</a></li>
+            <li><a href="terminos.html" data-i18n="footer.terms_link">Términos de Uso</a></li>
+            <li><a href="condiciones.html#deslinde-legal" data-i18n="footer.disclaimer_link">Deslinde de Responsabilidad</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 JPChat. Código abierto, libre y descentralizado.</div>
+        <div data-i18n="footer.copyright">© 2026 JPChat. Código abierto, libre y descentralizado.</div>
         <div style="display: flex; gap: 1.5rem;">
           <a href="privacidad.html">Privacidad</a>
           <a href="condiciones.html">Condiciones</a>
@@ -276,6 +288,7 @@
     </div>
   </footer>
 
+  <script src="translations.js?v=1.0"></script>
   <script src="main.js?v=3.0"></script>
 </body>
 </html>

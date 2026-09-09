@@ -37,23 +37,35 @@
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Inicio</a></li>
-          <li><a href="index.html#como-funciona" class="nav-link">¿Cómo Funciona?</a></li>
-          <li><a href="index.html#caracteristicas" class="nav-link">Características</a></li>
-          <li><a href="descargas.html" class="nav-link">Descargas</a></li>
-          <li><a href="privacidad.html" class="nav-link">Privacidad</a></li>
-          <li><a href="condiciones.html" class="nav-link active">Condiciones</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="index.html#como-funciona" class="nav-link" data-i18n="nav.how_it_works">¿Cómo Funciona?</a></li>
+          <li><a href="index.html#caracteristicas" class="nav-link" data-i18n="nav.features">Características</a></li>
+          <li><a href="descargas.html" class="nav-link" data-i18n="nav.downloads">Descargas</a></li>
+          <li><a href="privacidad.html" class="nav-link" data-i18n="nav.privacy">Privacidad</a></li>
+          <li><a href="condiciones.html" class="nav-link active" data-i18n="nav.conditions">Condiciones</a></li>
+          <li class="mobile-lang-item">
+            <div class="lang-switcher" role="group" aria-label="Idioma">
+              <button type="button" class="lang-btn active" data-lang="es">ES</button>
+              <span class="lang-divider">/</span>
+              <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+          </li>
         </ul>
       </nav>
 
       <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="Selector de idioma">
+          <button type="button" class="lang-btn active" data-lang="es">ES</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
         <a href="descargas.html" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span>Descargar APK</span>
+          <span data-i18n="nav.download_apk">Descargar APK</span>
         </a>
         <button class="mobile-toggle" aria-label="Abrir Menú" aria-expanded="false">&#9776;</button>
       </div>
@@ -66,104 +78,96 @@
       
       <!-- Sticky Sidebar Navigation -->
       <aside class="legal-sidebar reveal-left">
-        <a href="#naturaleza-servicio" class="legal-nav-link active">1. Naturaleza del Servicio</a>
-        <a href="#elegibilidad" class="legal-nav-link">2. Elegibilidad y Acceso</a>
-        <a href="#uso-aceptable" class="legal-nav-link">3. Responsabilidad de Uso</a>
-        <a href="#cifrado-soberania" class="legal-nav-link">4. Cifrado y Custodia</a>
-        <a href="#conectividad" class="legal-nav-link">5. Conectividad y Red</a>
-        <a href="#deslinde-legal" class="legal-nav-link">6. Deslinde de Responsabilidad</a>
-        <a href="#licencia-software" class="legal-nav-link">7. Licencia y Modificaciones</a>
+        <a href="#naturaleza-servicio" class="legal-nav-link active" data-i18n="cond.side1">1. Naturaleza del Servicio</a>
+        <a href="#elegibilidad" class="legal-nav-link" data-i18n="cond.side2">2. Elegibilidad y Acceso</a>
+        <a href="#uso-aceptable" class="legal-nav-link" data-i18n="cond.side3">3. Responsabilidad de Uso</a>
+        <a href="#cifrado-soberania" class="legal-nav-link" data-i18n="cond.side4">4. Cifrado y Custodia</a>
+        <a href="#conectividad" class="legal-nav-link" data-i18n="cond.side5">5. Conectividad y Red</a>
+        <a href="#deslinde-legal" class="legal-nav-link" data-i18n="cond.side6">6. Deslinde de Responsabilidad</a>
+        <a href="#licencia-software" class="legal-nav-link" data-i18n="cond.side7">7. Licencia y Modificaciones</a>
       </aside>
 
       <!-- Main Legal Document -->
       <article class="legal-content">
         <div class="reveal">
-          <span class="badge-tag" style="margin-bottom: 0.8rem;">Marco Operativo y Legal</span>
-          <h1 style="font-size: clamp(2.2rem, 3.5vw, 2.8rem); margin-bottom: 0.5rem; color: #FFFFFF;">Condiciones del Servicio</h1>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">Última actualización: Septiembre de 2026</p>
+          <span class="badge-tag" style="margin-bottom: 0.8rem;" data-i18n="legal.badge_framework">Marco Operativo y Legal</span>
+          <h1 style="font-size: clamp(2.2rem, 3.5vw, 2.8rem); margin-bottom: 0.5rem; color: #FFFFFF;" data-i18n="cond.title">Condiciones del Servicio</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="legal.last_updated">Última actualización: Septiembre de 2026</p>
         </div>
 
         <!-- Section 1: Naturaleza del Servicio -->
         <section id="naturaleza-servicio" class="reveal">
-          <h2>1. Naturaleza del Servicio Descentralizado</h2>
+          <h2 data-i18n="cond.s1_title">1. Naturaleza del Servicio Descentralizado</h2>
           <div class="legal-alert" style="margin-bottom: 1.2rem;">
-            <strong style="color: #BAE6FD; font-size: 1.05rem;">Cliente de Software Autónomo:</strong>
-            <p style="margin-top: 0.4rem; color: #FFFFFF;">
+            <strong style="color: #BAE6FD; font-size: 1.05rem;" data-i18n="cond.s1_alert_title">Cliente de Software Autónomo:</strong>
+            <p style="margin-top: 0.4rem; color: #FFFFFF;" data-i18n="cond.s1_alert_p">
               JPChat no es un servicio centralizado de mensajería corporativa ni un operador de telecomunicaciones en la nube. JPChat es una <strong>herramienta de software libre y autónoma</strong> para dispositivos móviles que permite la comunicación de terminal a terminal (Peer-to-Peer, P2P) mediante sockets locales y protocolos directos.
             </p>
           </div>
-          <p>
+          <p data-i18n="cond.s1_p">
             Al usar esta aplicación, usted comprende y acepta que no existe un servidor central intermedio que almacene sus mensajes, que gestione listas de contactos o que mantenga copias de sus conversaciones. Toda transferencia de información ocurre directamente entre los dispositivos que se conectan de forma voluntaria.
           </p>
         </section>
 
         <!-- Section 2: Elegibilidad y Acceso -->
         <section id="elegibilidad" class="reveal">
-          <h2>2. Elegibilidad y Acceso sin Registro</h2>
-          <p>
-            El uso de JPChat no está condicionado a la entrega de datos personales:
-          </p>
+          <h2 data-i18n="cond.s2_title">2. Elegibilidad y Acceso sin Registro</h2>
+          <p data-i18n="cond.s2_p">El uso de JPChat no está condicionado a la entrega de datos personales:</p>
           <ul>
-            <li><strong>Sin Cuentas Centrales:</strong> No requiere número de teléfono, correo electrónico ni verificación por SMS o identidad oficial.</li>
-            <li><strong>Generación de Identidad Local:</strong> Su identidad se basa en un par de claves criptográficas asimétricas (ECDH) que se generan exclusivamente en su dispositivo.</li>
-            <li><strong>Requisitos Técnicos:</strong> Dispositivo con sistema operativo Android 7.0 (API nivel 24) o superior con capacidades de conectividad Wi-Fi, LAN o datos móviles.</li>
+            <li data-i18n="cond.s2_li1"><strong>Sin Cuentas Centrales:</strong> No requiere número de teléfono, correo electrónico ni verificación por SMS o identidad oficial.</li>
+            <li data-i18n="cond.s2_li2"><strong>Generación de Identidad Local:</strong> Su identidad se basa en un par de claves criptográficas asimétricas (ECDH) que se generan exclusivamente en su dispositivo.</li>
+            <li data-i18n="cond.s2_li3"><strong>Requisitos Técnicos:</strong> Dispositivo con sistema operativo Android 7.0 (API nivel 24) o superior con capacidades de conectividad Wi-Fi, LAN o datos móviles.</li>
           </ul>
         </section>
 
         <!-- Section 3: Responsabilidad de Uso -->
         <section id="uso-aceptable" class="reveal">
-          <h2>3. Responsabilidad Individual y Uso Aceptable</h2>
-          <p>
-            Al ser una herramienta neutral y de arquitectura descentralizada, los desarrolladores carecen por completo de facultades técnicas para supervisar, censurar, interceptar o moderar las transmisiones:
-          </p>
+          <h2 data-i18n="cond.s3_title">3. Responsabilidad Individual y Uso Aceptable</h2>
+          <p data-i18n="cond.s3_p">Al ser una herramienta neutral y de arquitectura descentralizada, los desarrolladores carecen por completo de facultades técnicas para supervisar, censurar, interceptar o moderar las transmisiones:</p>
           <ul>
-            <li><strong>Soberanía del Usuario:</strong> Cada usuario es única y exclusivamente responsable del contenido que decide enviar, solicitar, recibir o almacenar en su propio dispositivo.</li>
-            <li><strong>Cumplimiento Normativo:</strong> Usted se compromete a hacer uso del software respetando la legislación aplicable en su territorio o jurisdicción respectiva.</li>
-            <li><strong>Inexistencia de Moderación:</strong> No existe ningún departamento o mecanismo técnico de moderación central que pueda bloquear usuarios o eliminar contenido ajeno.</li>
+            <li data-i18n="cond.s3_li1"><strong>Soberanía del Usuario:</strong> Cada usuario es única y exclusivamente responsable del contenido que decide enviar, solicitar, recibir o almacenar en su propio dispositivo.</li>
+            <li data-i18n="cond.s3_li2"><strong>Cumplimiento Normativo:</strong> Usted se compromete a hacer uso del software respetando la legislación aplicable en su territorio o jurisdicción respectiva.</li>
+            <li data-i18n="cond.s3_li3"><strong>Inexistencia de Moderación:</strong> No existe ningún departamento o mecanismo técnico de moderación central que pueda bloquear usuarios o eliminar contenido ajeno.</li>
           </ul>
         </section>
 
         <!-- Section 4: Cifrado y Custodia -->
         <section id="cifrado-soberania" class="reveal">
-          <h2>4. Cifrado y Custodia Exclusiva de Datos</h2>
+          <h2 data-i18n="cond.s4_title">4. Cifrado y Custodia Exclusiva de Datos</h2>
           <div class="legal-alert" style="margin-bottom: 1.2rem;">
-            <strong style="color: #BAE6FD;">Custodia no Delegable:</strong>
-            <p style="margin-top: 0.4rem; color: #FFFFFF;">
+            <strong style="color: #BAE6FD;" data-i18n="cond.s4_alert_title">Custodia no Delegable:</strong>
+            <p style="margin-top: 0.4rem; color: #FFFFFF;" data-i18n="cond.s4_alert_p">
               La pérdida de su dispositivo móvil, el borrado de datos o la desinstalación de la app conlleva la <strong>destrucción permanente e irrecuperable</strong> de sus conversaciones y claves. Ningún desarrollador puede restaurar sus datos.
             </p>
           </div>
-          <p>
+          <p data-i18n="cond.s4_p">
             Todas las comunicaciones se encuentran protegidas por cifrado de extremo a extremo (AES-256 GCM). La custodia de la clave privada corresponde únicamente al usuario poseedor del terminal.
           </p>
         </section>
 
         <!-- Section 5: Conectividad y Red -->
         <section id="conectividad" class="reveal">
-          <h2>5. Conectividad P2P y Tráfico de Red</h2>
-          <p>
-            La eficacia del intercambio de paquetes, la calidad de audio en llamadas de voz y la velocidad de transferencia de archivos dependen en su totalidad de:
-          </p>
+          <h2 data-i18n="cond.s5_title">5. Conectividad P2P y Tráfico de Red</h2>
+          <p data-i18n="cond.s5_p">La eficacia del intercambio de paquetes, la calidad de audio en llamadas de voz y la velocidad de transferencia de archivos dependen en su totalidad de:</p>
           <ul>
-            <li>La calidad y estabilidad de su proveedor de servicio de internet (ISP o datos celulares).</li>
-            <li>La configuración de red y compatibilidad entre los enrutadores de los pares comunicantes.</li>
-            <li>La disponibilidad física simultánea de ambos dispositivos conectados a una red accesible.</li>
+            <li data-i18n="cond.s5_li1">La calidad y estabilidad de su proveedor de servicio de internet (ISP o datos celulares).</li>
+            <li data-i18n="cond.s5_li2">La configuración de red y compatibilidad entre los enrutadores de los pares comunicantes.</li>
+            <li data-i18n="cond.s5_li3">La disponibilidad física simultánea de ambos dispositivos conectados a una red accesible.</li>
           </ul>
-          <p>
-            El software se distribuye sin garantías de disponibilidad continua de red o tiempos mínimos de latencia.
-          </p>
+          <p data-i18n="cond.s5_p2">El software se distribuye sin garantías de disponibilidad continua de red o tiempos mínimos de latencia.</p>
         </section>
 
         <!-- Section 6: Deslinde de Responsabilidad -->
         <section id="deslinde-legal" class="reveal">
-          <h2>6. Deslinde Total y Exención de Responsabilidad</h2>
+          <h2 data-i18n="cond.s6_title">6. Deslinde Total y Exención de Responsabilidad</h2>
           <div class="legal-alert warning" style="margin-bottom: 1.4rem;">
-            <strong style="color: #FFFFFF; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">
+            <strong style="color: #FFFFFF; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;" data-i18n="cond.s6_alert_title">
               CLÁUSULA DE EXENCIÓN Y DESLINDE TOTAL:
             </strong>
-            <p style="color: #FFFFFF; font-size: 0.98rem; line-height: 1.7;">
+            <p style="color: #FFFFFF; font-size: 0.98rem; line-height: 1.7;" data-i18n="cond.s6_alert_p1">
               <strong>Los creadores y colaboradores de JPChat quedan exonerados y deslindados de cualquier responsabilidad civil, penal, laboral o administrativa derivada de las acciones o comunicaciones efectuadas por terceros a través de la aplicación.</strong>
             </p>
-            <p style="color: #FFFFFF; font-size: 0.95rem; margin-top: 0.8rem; line-height: 1.7;">
+            <p style="color: #FFFFFF; font-size: 0.95rem; margin-top: 0.8rem; line-height: 1.7;" data-i18n="cond.s6_alert_p2">
               El software se suministra libremente "TAL CUAL" (*AS-IS*), sin garantías expresas ni tácitas. La decisión de utilizar esta herramienta técnica es un acto libre, individual y soberano de cada persona, asumiendo el usuario todos los riesgos asociados al manejo de su propio dispositivo y sus comunicaciones.
             </p>
           </div>
@@ -171,11 +175,11 @@
 
         <!-- Section 7: Licencia y Modificaciones -->
         <section id="licencia-software" class="reveal">
-          <h2>7. Licencia de Software y Modificaciones</h2>
-          <p>
+          <h2 data-i18n="cond.s7_title">7. Licencia de Software y Modificaciones</h2>
+          <p data-i18n="cond.s7_p1">
             JPChat es un proyecto abierto y libre. Los binarios ejecutables (APK) y el código fuente pueden ser compartidos de forma directa entre terminales, estudiados y auditados de acuerdo con las licencias de software libre correspondientes.
           </p>
-          <p>
+          <p data-i18n="cond.s7_p2">
             Estas condiciones reflejan la arquitectura técnica de la herramienta y podrán ser actualizadas para describir mejoras operativas en nuevas versiones del cliente P2P.
           </p>
         </section>
@@ -232,7 +236,7 @@
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 JPChat. Plataforma de comunicación libre y descentralizada.</div>
+        <div data-i18n="footer.copyright">© 2026 JPChat. Plataforma de comunicación libre y descentralizada.</div>
         <div style="display: flex; gap: 1.5rem;">
           <a href="privacidad.html">Privacidad</a>
           <a href="condiciones.html">Condiciones</a>
@@ -243,6 +247,7 @@
     </div>
   </footer>
 
+  <script src="translations.js?v=1.0"></script>
   <script src="main.js?v=3.0"></script>
 </body>
 </html>

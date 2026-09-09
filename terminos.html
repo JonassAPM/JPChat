@@ -36,23 +36,35 @@
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Inicio</a></li>
-          <li><a href="index.html#como-funciona" class="nav-link">¿Cómo Funciona?</a></li>
-          <li><a href="index.html#caracteristicas" class="nav-link">Características</a></li>
-          <li><a href="descargas.html" class="nav-link">Descargas</a></li>
-          <li><a href="condiciones.html" class="nav-link">Condiciones</a></li>
-          <li><a href="terminos.html" class="nav-link active">Términos</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="index.html#como-funciona" class="nav-link" data-i18n="nav.how_it_works">¿Cómo Funciona?</a></li>
+          <li><a href="index.html#caracteristicas" class="nav-link" data-i18n="nav.features">Características</a></li>
+          <li><a href="descargas.html" class="nav-link" data-i18n="nav.downloads">Descargas</a></li>
+          <li><a href="condiciones.html" class="nav-link" data-i18n="nav.conditions">Condiciones</a></li>
+          <li><a href="terminos.html" class="nav-link active" data-i18n="nav.terms">Términos</a></li>
+          <li class="mobile-lang-item">
+            <div class="lang-switcher" role="group" aria-label="Idioma">
+              <button type="button" class="lang-btn active" data-lang="es">ES</button>
+              <span class="lang-divider">/</span>
+              <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+          </li>
         </ul>
       </nav>
 
       <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="Selector de idioma">
+          <button type="button" class="lang-btn active" data-lang="es">ES</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
         <a href="descargas.html" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span>Descargar APK</span>
+          <span data-i18n="nav.download_apk">Descargar APK</span>
         </a>
         <button class="mobile-toggle" aria-label="Abrir Menú" aria-expanded="false">&#9776;</button>
       </div>
@@ -65,96 +77,92 @@
       
       <!-- Sticky Sidebar Navigation -->
       <aside class="legal-sidebar reveal-left">
-        <a href="#deslinde" class="legal-nav-link active">1. Deslinde de Responsabilidad</a>
-        <a href="#naturaleza" class="legal-nav-link">2. Naturaleza del Software</a>
-        <a href="#custodia" class="legal-nav-link">3. Custodia de Claves</a>
-        <a href="#responsabilidad-usuario" class="legal-nav-link">4. Responsabilidad del Usuario</a>
-        <a href="#red" class="legal-nav-link">5. Disponibilidad de Red</a>
-        <a href="#licencia" class="legal-nav-link">6. Licencia y Distribución</a>
+        <a href="#deslinde" class="legal-nav-link active" data-i18n="terms.side1">1. Deslinde de Responsabilidad</a>
+        <a href="#naturaleza" class="legal-nav-link" data-i18n="terms.side2">2. Naturaleza del Software</a>
+        <a href="#custodia" class="legal-nav-link" data-i18n="terms.side3">3. Custodia de Claves</a>
+        <a href="#responsabilidad-usuario" class="legal-nav-link" data-i18n="terms.side4">4. Responsabilidad del Usuario</a>
+        <a href="#red" class="legal-nav-link" data-i18n="terms.side5">5. Disponibilidad de Red</a>
+        <a href="#licencia" class="legal-nav-link" data-i18n="terms.side6">6. Licencia y Distribución</a>
       </aside>
 
       <!-- Main Legal Document -->
       <article class="legal-content">
         <div class="reveal">
-          <span class="badge-tag" style="margin-bottom: 0.8rem;">Marco Operativo y Legal</span>
-          <h1 style="font-size: clamp(2.2rem, 3.5vw, 2.8rem); margin-bottom: 0.5rem; color: #FFFFFF;">Términos y Condiciones de Uso</h1>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">Última actualización: Septiembre de 2026</p>
+          <span class="badge-tag" style="margin-bottom: 0.8rem;" data-i18n="legal.badge_framework">Marco Operativo y Legal</span>
+          <h1 style="font-size: clamp(2.2rem, 3.5vw, 2.8rem); margin-bottom: 0.5rem; color: #FFFFFF;" data-i18n="terms.title">Términos y Condiciones de Uso</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="legal.last_updated">Última actualización: Septiembre de 2026</p>
         </div>
 
         <!-- Section 1: Explicit Legal Disclaimer & Exemption -->
         <section id="deslinde" class="reveal">
-          <h2>1. Exención Total y Deslinde de Responsabilidad Legal</h2>
+          <h2 data-i18n="terms.s1_title">1. Exención Total y Deslinde de Responsabilidad Legal</h2>
           <div class="legal-alert warning" style="margin-bottom: 1.4rem;">
-            <strong style="color: #FFFFFF; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">
+            <strong style="color: #FFFFFF; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;" data-i18n="terms.s1_alert_title">
               CLÁUSULA DE DESLINDE ABSOLUTO DE RESPONSABILIDAD:
             </strong>
-            <p style="color: #FFFFFF; font-size: 0.98rem; line-height: 1.7;">
+            <p style="color: #FFFFFF; font-size: 0.98rem; line-height: 1.7;" data-i18n="terms.s1_p1">
               <strong>Los desarrolladores y creadores de JPChat se deslindan en su totalidad y de forma irrevocable de cualquier responsabilidad civil, penal, administrativa o judicial derivada del uso que cualquier persona le dé a la aplicación.</strong>
             </p>
-            <p style="color: #FFFFFF; font-size: 0.95rem; margin-top: 0.8rem; line-height: 1.7;">
+            <p style="color: #FFFFFF; font-size: 0.95rem; margin-top: 0.8rem; line-height: 1.7;" data-i18n="terms.s1_p2">
               Nosotros proveemos únicamente la <strong>herramienta tecnológica</strong> como software libre. Cada persona es absolutamente libre, independiente y soberana de utilizar la aplicación como desee. Que un usuario decida utilizar la herramienta con fines lícitos o ilícitos, de buena o de mala manera, es responsabilidad única y exclusiva de dicho individuo. Los desarrolladores quedamos exentos por completo de todas y cada una de las cargas legales, reclamaciones, perjuicios o demandas que pudieran surgir.
             </p>
           </div>
-          <p>
+          <p data-i18n="terms.s1_p3">
             Al descargar, instalar, copiar o utilizar JPChat, el usuario acepta de manera expresa e incondicional que no existe relación contractual, de custodia o de prestación de servicios entre el usuario y los desarrolladores.
           </p>
         </section>
 
         <!-- Section 2: Naturaleza P2P -->
         <section id="naturaleza" class="reveal">
-          <h2>2. Naturaleza Descentralizada del Software</h2>
-          <p>
-            JPChat es un cliente de mensajería punto a punto (Peer-to-Peer, P2P). Funciona sin infraestructura central de telecomunicaciones:
-          </p>
+          <h2 data-i18n="terms.s2_title">2. Naturaleza Descentralizada del Software</h2>
+          <p data-i18n="terms.s2_p">JPChat es un cliente de mensajería punto a punto (Peer-to-Peer, P2P). Funciona sin infraestructura central de telecomunicaciones:</p>
           <ul>
-            <li>No existen servidores centrales que almacenen, supervisen, moderen o retransmitan tus datos.</li>
-            <li>Los desarrolladores no tenemos acceso técnico ni conocimiento sobre los contenidos, archivos o identidades que se comunican a través de la aplicación.</li>
-            <li>El software se entrega "TAL CUAL" (AS-IS), sin garantías explícitas o implícitas de ningún tipo.</li>
+            <li data-i18n="terms.s2_li1">No existen servidores centrales que almacenen, supervisen, moderen o retransmitan tus datos.</li>
+            <li data-i18n="terms.s2_li2">Los desarrolladores no tenemos acceso técnico ni conocimiento sobre los contenidos, archivos o identidades que se comunican a través de la aplicación.</li>
+            <li data-i18n="terms.s2_li3">El software se entrega "TAL CUAL" (AS-IS), sin garantías explícitas o implícitas de ningún tipo.</li>
           </ul>
         </section>
 
         <!-- Section 3: Custodia de Claves -->
         <section id="custodia" class="reveal">
-          <h2>3. Custodia de Claves y Pérdida de Datos</h2>
+          <h2 data-i18n="terms.s3_title">3. Custodia de Claves y Pérdida de Datos</h2>
           <div class="legal-alert" style="margin-bottom: 1.2rem;">
-            <strong style="color: #BAE6FD;">Aviso Crítico:</strong>
-            <p style="margin-top: 0.4rem; color: #FFFFFF;">
+            <strong style="color: #BAE6FD;" data-i18n="terms.s3_alert_title">Aviso Crítico:</strong>
+            <p style="margin-top: 0.4rem; color: #FFFFFF;" data-i18n="terms.s3_alert_p">
               Dado que JPChat no tiene servidores ni cuentas en la nube, <strong>no existe ningún mecanismo para recuperar contraseñas, restaurar chats o recuperar claves privadas</strong>.
             </p>
           </div>
-          <p>
+          <p data-i18n="terms.s3_p">
             El usuario es el único y exclusivo responsable de salvaguardar su dispositivo móvil y la clave criptográfica generada en el mismo. Si pierdes tu dispositivo, borras los datos o desinstalas la app, tus conversaciones se destruyen de forma irreversible sin posibilidad de auxilio técnico.
           </p>
         </section>
 
         <!-- Section 4: Responsabilidad del Usuario -->
         <section id="responsabilidad-usuario" class="reveal">
-          <h2>4. Responsabilidad Individual y Libertad de Uso</h2>
-          <p>
-            JPChat nace como una defensa del derecho universal a la privacidad y la confidencialidad. Cada usuario asume la total responsabilidad por:
-          </p>
+          <h2 data-i18n="terms.s4_title">4. Responsabilidad Individual y Libertad de Uso</h2>
+          <p data-i18n="terms.s4_p">JPChat nace como una defensa del derecho universal a la privacidad y la confidencialidad. Cada usuario asume la total responsabilidad por:</p>
           <ul>
-            <li>El contenido que comparte o recibe a través de la aplicación.</li>
-            <li>El cumplimiento de las leyes aplicables en su país o jurisdicción respectiva.</li>
-            <li>Los contactos a los que autoriza o comparte su clave pública.</li>
+            <li data-i18n="terms.s4_li1">El contenido que comparte o recibe a través de la aplicación.</li>
+            <li data-i18n="terms.s4_li2">El cumplimiento de las leyes aplicables en su país o jurisdicción respectiva.</li>
+            <li data-i18n="terms.s4_li3">Los contactos a los que autoriza o comparte su clave pública.</li>
           </ul>
-          <p>
+          <p data-i18n="terms.s4_p2">
             Los desarrolladores no monitorean ni tienen la capacidad tecnológica de intervenir o censurar ningún paquete de datos transmitido entre terminales.
           </p>
         </section>
 
         <!-- Section 5: Calidad de Red -->
         <section id="red" class="reveal">
-          <h2>5. Disponibilidad de Red y Calidad de Transmisión</h2>
-          <p>
+          <h2 data-i18n="terms.s5_title">5. Disponibilidad de Red y Calidad de Transmisión</h2>
+          <p data-i18n="terms.s5_p">
             La velocidad de entrega de los mensajes, la calidad del audio en las llamadas P2P y la transferencia de archivos multimedia dependen exclusivamente de la calidad de la conexión de red (Wi-Fi, datos móviles o LAN) de los dispositivos de los usuarios. Los desarrolladores no garantizan un nivel de servicio ininterrumpido.
           </p>
         </section>
 
         <!-- Section 6: Licencia Libre -->
         <section id="licencia" class="reveal">
-          <h2>6. Licencia, Código Abierto y Distribución</h2>
-          <p>
+          <h2 data-i18n="terms.s6_title">6. Licencia, Código Abierto y Distribución</h2>
+          <p data-i18n="terms.s6_p">
             El código fuente de JPChat y sus binarios ejecutables (archivos APK) pueden ser compartidos libremente de dispositivo a dispositivo, redistribuidos y auditados conforme a los principios del software libre, respetando la autoría original y la integridad criptográfica del proyecto.
           </p>
         </section>
@@ -167,7 +175,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom" style="border: none; padding-top: 0;">
-        <div>© 2026 JPChat. Plataforma de comunicación libre y descentralizada.</div>
+        <div data-i18n="footer.copyright">© 2026 JPChat. Plataforma de comunicación libre y descentralizada.</div>
         <div style="display: flex; gap: 1.5rem;">
           <a href="index.html">Inicio</a>
           <a href="descargas.html">Descargas</a>
@@ -178,6 +186,7 @@
     </div>
   </footer>
 
+  <script src="translations.js?v=1.0"></script>
   <script src="main.js?v=3.0"></script>
 </body>
 </html>

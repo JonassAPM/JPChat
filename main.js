@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initLanguage();
   initNavbarScroll();
   initMobileMenu();
   initTabs();
@@ -231,6 +232,13 @@ function initCopyHash() {
 
   copyBtn.addEventListener('click', async () => {
     const textToCopy = hashCode.textContent.trim();
+    const currentLang = localStorage.getItem('jpchat_lang') || 'es';
+    const dict = (typeof JPChatTranslations !== 'undefined' && JPChatTranslations[currentLang]) ? JPChatTranslations[currentLang] : null;
+    const copiedToast = dict ? dict['toast.copied'] : '¡Hash SHA-256 copiado al portapapeles!';
+    const errorToast = dict ? dict['toast.copy_error'] : 'Error al copiar el hash';
+    const copiedBtnText = dict ? dict['dl.copied'] : '✓ Copiado';
+    const resetBtnText = dict ? dict['dl.copy_btn'] : 'Copiar Hash';
+
     try {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(textToCopy);
@@ -244,15 +252,73 @@ function initCopyHash() {
         document.execCommand('copy');
         document.body.removeChild(textarea);
       }
-      showToast('¡Hash SHA-256 copiado al portapapeles!');
-      const originalText = copyBtn.textContent;
-      copyBtn.textContent = '✓ Copiado';
+      showToast(copiedToast);
+      copyBtn.textContent = copiedBtnText;
       setTimeout(() => {
-        copyBtn.textContent = originalText;
+        copyBtn.textContent = resetBtnText;
       }, 2500);
     } catch (err) {
-      showToast('Error al copiar el hash');
+      showToast(errorToast);
     }
+  });
+}
+
+/**
+ * Internationalization (i18n) & Bilingual Switcher (ES / EN)
+ * Auto-detects browser locale, persists choice in localStorage,
+ * and updates all [data-i18n] and [data-i18n-placeholder] elements.
+ */
+let activeLang = 'es';
+
+function initLanguage() {
+  const savedLang = localStorage.getItem('jpchat_lang');
+  let langToUse = 'es';
+
+  if (savedLang === 'es' || savedLang === 'en') {
+    langToUse = savedLang;
+  } else {
+    const navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    langToUse = navLang.startsWith('es') ? 'es' : 'en';
+  }
+
+  setLanguage(langToUse);
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-btn');
+    if (!btn) return;
+    e.preventDefault();
+    const selected = btn.getAttribute('data-lang');
+    if (selected === 'es' || selected === 'en') {
+      setLanguage(selected);
+    }
+  });
+}
+
+function setLanguage(lang) {
+  if (typeof JPChatTranslations === 'undefined') return;
+  const dict = JPChatTranslations[lang];
+  if (!dict) return;
+
+  activeLang = lang;
+  localStorage.setItem('jpchat_lang', lang);
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key] !== undefined) {
+      el.setAttribute('placeholder', dict[key]);
+    }
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
 }
 

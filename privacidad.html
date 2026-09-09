@@ -36,23 +36,35 @@
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Inicio</a></li>
-          <li><a href="index.html#como-funciona" class="nav-link">¿Cómo Funciona?</a></li>
-          <li><a href="index.html#caracteristicas" class="nav-link">Características</a></li>
-          <li><a href="descargas.html" class="nav-link">Descargas</a></li>
-          <li><a href="privacidad.html" class="nav-link active">Privacidad</a></li>
-          <li><a href="condiciones.html" class="nav-link">Condiciones</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="index.html#como-funciona" class="nav-link" data-i18n="nav.how_it_works">¿Cómo Funciona?</a></li>
+          <li><a href="index.html#caracteristicas" class="nav-link" data-i18n="nav.features">Características</a></li>
+          <li><a href="descargas.html" class="nav-link" data-i18n="nav.downloads">Descargas</a></li>
+          <li><a href="privacidad.html" class="nav-link active" data-i18n="nav.privacy">Privacidad</a></li>
+          <li><a href="condiciones.html" class="nav-link" data-i18n="nav.conditions">Condiciones</a></li>
+          <li class="mobile-lang-item">
+            <div class="lang-switcher" role="group" aria-label="Idioma">
+              <button type="button" class="lang-btn active" data-lang="es">ES</button>
+              <span class="lang-divider">/</span>
+              <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+          </li>
         </ul>
       </nav>
 
       <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="Selector de idioma">
+          <button type="button" class="lang-btn active" data-lang="es">ES</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
         <a href="descargas.html" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span>Descargar APK</span>
+          <span data-i18n="nav.download_apk">Descargar APK</span>
         </a>
         <button class="mobile-toggle" aria-label="Abrir Menú" aria-expanded="false">&#9776;</button>
       </div>
@@ -65,116 +77,106 @@
       
       <!-- Sticky Sidebar Navigation (Exactly 7 matching items in order) -->
       <aside class="legal-sidebar reveal-left">
-        <a href="#filosofia" class="legal-nav-link active">1. Filosofía de Privacidad</a>
-        <a href="#datos-identidad" class="legal-nav-link">2. Datos de Identidad</a>
-        <a href="#mensajeria" class="legal-nav-link">3. Mensajería y Tráfico P2P</a>
-        <a href="#almacenamiento" class="legal-nav-link">4. Almacenamiento Local</a>
-        <a href="#stickers" class="legal-nav-link">5. Stickers y Multimedia</a>
-        <a href="#telemetria" class="legal-nav-link">6. Cero Telemetría y Publicidad</a>
-        <a href="#derechos" class="legal-nav-link">7. Control del Usuario y Deslinde</a>
+        <a href="#filosofia" class="legal-nav-link active" data-i18n="priv.side1">1. Filosofía de Privacidad</a>
+        <a href="#datos-identidad" class="legal-nav-link" data-i18n="priv.side2">2. Datos de Identidad</a>
+        <a href="#mensajeria" class="legal-nav-link" data-i18n="priv.side3">3. Mensajería y Tráfico P2P</a>
+        <a href="#almacenamiento" class="legal-nav-link" data-i18n="priv.side4">4. Almacenamiento Local</a>
+        <a href="#stickers" class="legal-nav-link" data-i18n="priv.side5">5. Stickers y Multimedia</a>
+        <a href="#telemetria" class="legal-nav-link" data-i18n="priv.side6">6. Cero Telemetría y Publicidad</a>
+        <a href="#derechos" class="legal-nav-link" data-i18n="priv.side7">7. Control del Usuario y Deslinde</a>
       </aside>
 
       <!-- Main Legal Document (Exactly 7 sections matching 1:1) -->
       <article class="legal-content">
         <div class="reveal">
-          <span class="badge-tag" style="margin-bottom: 0.8rem;">Transparencia Radical</span>
-          <h1 style="font-size: clamp(2.2rem, 3.5vw, 2.8rem); margin-bottom: 0.5rem; color: #FFFFFF;">Política de Privacidad</h1>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">Última actualización: Septiembre de 2026</p>
+          <span class="badge-tag" style="margin-bottom: 0.8rem;" data-i18n="legal.badge_transparency">Transparencia Radical</span>
+          <h1 style="font-size: clamp(2.2rem, 3.5vw, 2.8rem); margin-bottom: 0.5rem; color: #FFFFFF;" data-i18n="priv.title">Política de Privacidad</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="legal.last_updated">Última actualización: Septiembre de 2026</p>
         </div>
 
         <!-- Section 1: Filosofia -->
         <section id="filosofia" class="reveal">
-          <h2>1. Filosofía de Privacidad</h2>
+          <h2 data-i18n="priv.s1_title">1. Filosofía de Privacidad</h2>
           <div class="legal-alert" style="margin-bottom: 1.2rem;">
-            <strong style="color: #BAE6FD; font-size: 1.05rem;">Principio Fundamental:</strong>
-            <p style="margin-top: 0.4rem; color: #FFFFFF;">
+            <strong style="color: #BAE6FD; font-size: 1.05rem;" data-i18n="priv.s1_alert_title">Principio Fundamental:</strong>
+            <p style="margin-top: 0.4rem; color: #FFFFFF;" data-i18n="priv.s1_alert_p">
               <strong>No podemos vender, entregar ni espiar tus datos porque no tenemos servidores donde almacenarlos.</strong> JPChat fue concebida y desarrollada bajo el paradigma de Privacidad por Diseño (Privacy by Design). La comunicación es estrictamente directa de par a par entre los dispositivos involucrados.
             </p>
           </div>
-          <p>
+          <p data-i18n="priv.s1_p">
             En un mundo donde las empresas tecnológicas monetizan las conversaciones personales, los metadatos y la vida privada de los usuarios, JPChat representa una alternativa basada en software libre que devuelve la soberanía de la información exclusivamente a quien la emite y a quien la recibe.
           </p>
         </section>
 
         <!-- Section 2: Datos de Identidad -->
         <section id="datos-identidad" class="reveal">
-          <h2>2. Datos de Identidad</h2>
-          <p>
-            A diferencia de las aplicaciones de mensajería comercial tradicionales, JPChat <strong>nunca te solicitará ni recolectará:</strong>
-          </p>
+          <h2 data-i18n="priv.s2_title">2. Datos de Identidad</h2>
+          <p data-i18n="priv.s2_p">A diferencia de las aplicaciones de mensajería comercial tradicionales, JPChat <strong>nunca te solicitará ni recolectará:</strong></p>
           <ul>
-            <li>Número de teléfono móvil o tarjeta SIM.</li>
-            <li>Dirección de correo electrónico personal o profesional.</li>
-            <li>Nombre legal real o documento de identidad oficial.</li>
-            <li>Acceso a tu libreta de contactos general del teléfono.</li>
+            <li data-i18n="priv.s2_li1">Número de teléfono móvil o tarjeta SIM.</li>
+            <li data-i18n="priv.s2_li2">Dirección de correo electrónico personal o profesional.</li>
+            <li data-i18n="priv.s2_li3">Nombre legal real o documento de identidad oficial.</li>
+            <li data-i18n="priv.s2_li4">Acceso a tu libreta de contactos general del teléfono.</li>
           </ul>
-          <p>
+          <p data-i18n="priv.s2_p2">
             Tu identidad en JPChat consiste únicamente en un par de claves criptográficas generadas localmente en tu propio terminal mediante criptografía asimétrica de curvas elípticas (ECDH). Tu clave pública actúa como tu identificador seguro, y tú eres la única persona con la potestad de compartirla.
           </p>
         </section>
 
         <!-- Section 3: Mensajería y Tráfico P2P -->
         <section id="mensajeria" class="reveal">
-          <h2>3. Mensajería y Tráfico P2P</h2>
-          <p>
-            Los mensajes de texto, notas de voz, imágenes, archivos y llamadas circulan a través de protocolos Peer-to-Peer (P2P):
-          </p>
+          <h2 data-i18n="priv.s3_title">3. Mensajería y Tráfico P2P</h2>
+          <p data-i18n="priv.s3_p">Los mensajes de texto, notas de voz, imágenes, archivos y llamadas circulan a través de protocolos Peer-to-Peer (P2P):</p>
           <ul>
-            <li><strong>Cifrado Extremo a Extremo (E2E):</strong> Cada paquete de datos viaja protegido por algoritmos criptográficos robustos (AES-256 GCM). Solo el dispositivo de destino posee la clave privada para desencriptar el contenido.</li>
-            <li><strong>Sin Servidores Centrales de Retención:</strong> Los paquetes se envían directamente por red local (Wi-Fi/LAN) o mediante canales efímeros de señalización que no conservan registros, copias ni historial de tus conversaciones.</li>
-            <li><strong>Mensajes Efímeros ("Ver una sola vez"):</strong> Los contenidos marcados con autodestrucción se eliminan de manera inmediata e irreversible de la memoria física en cuanto se visualizan.</li>
+            <li data-i18n="priv.s3_li1"><strong>Cifrado Extremo a Extremo (E2E):</strong> Cada paquete de datos viaja protegido por algoritmos criptográficos robustos (AES-256 GCM). Solo el dispositivo de destino posee la clave privada para desencriptar el contenido.</li>
+            <li data-i18n="priv.s3_li2"><strong>Sin Servidores Centrales de Retención:</strong> Los paquetes se envían directamente por red local (Wi-Fi/LAN) o mediante canales efímeros de señalización que no conservan registros, copias ni historial de tus conversaciones.</li>
+            <li data-i18n="priv.s3_li3"><strong>Mensajes Efímeros ("Ver una sola vez"):</strong> Los contenidos marcados con autodestrucción se eliminan de manera inmediata e irreversible de la memoria física en cuanto se visualizan.</li>
           </ul>
         </section>
 
         <!-- Section 4: Almacenamiento Local -->
         <section id="almacenamiento" class="reveal">
-          <h2>4. Almacenamiento Local</h2>
-          <p>
-            El historial de tus chats, la lista de contactos verificados y los archivos multimedia recibidos residen de forma 100% exclusiva en la base de datos interna SQLite protegida de tu propio dispositivo Android:
-          </p>
+          <h2 data-i18n="priv.s4_title">4. Almacenamiento Local</h2>
+          <p data-i18n="priv.s4_p">El historial de tus chats, la lista de contactos verificados y los archivos multimedia recibidos residen de forma 100% exclusiva en la base de datos interna SQLite protegida de tu propio dispositivo Android:</p>
           <ul>
-            <li>No existe sincronización en la nube ni respaldos automáticos en servidores remotos de terceros.</li>
-            <li>Ni los creadores de JPChat ni ninguna entidad externa pueden acceder remotamente a tus mensajes.</li>
-            <li>Si desinstalas la aplicación o borras sus datos desde los Ajustes de Android, toda tu información se destruye permanentemente.</li>
+            <li data-i18n="priv.s4_li1">No existe sincronización en la nube ni respaldos automáticos en servidores remotos de terceros.</li>
+            <li data-i18n="priv.s4_li2">Ni los creadores de JPChat ni ninguna entidad externa pueden acceder remotamente a tus mensajes.</li>
+            <li data-i18n="priv.s4_li3">Si desinstalas la aplicación o borras sus datos desde los Ajustes de Android, toda tu información se destruye permanentemente.</li>
           </ul>
         </section>
 
         <!-- Section 5: Stickers y Multimedia -->
         <section id="stickers" class="reveal">
-          <h2>5. Stickers y Multimedia</h2>
-          <p>
-            La función de importación de stickers de WhatsApp opera en su totalidad de manera local:
-          </p>
+          <h2 data-i18n="priv.s5_title">5. Stickers y Multimedia</h2>
+          <p data-i18n="priv.s5_p">La función de importación de stickers de WhatsApp opera en su totalidad de manera local:</p>
           <ul>
-            <li>La app lee los paquetes de stickers almacenados en el sistema de archivos de tu propio móvil mediante los permisos otorgados.</li>
-            <li>Los stickers se copian al almacenamiento privado de JPChat sin transmitirse a ningún servidor web externo.</li>
-            <li>Los archivos multimedia (fotos, audios, documentos) se transfieren punto a punto entre usuarios a la velocidad nativa de la red.</li>
+            <li data-i18n="priv.s5_li1">La app lee los paquetes de stickers almacenados en el sistema de archivos de tu propio móvil mediante los permisos otorgados.</li>
+            <li data-i18n="priv.s5_li2">Los stickers se copian al almacenamiento privado de JPChat sin transmitirse a ningún servidor web externo.</li>
+            <li data-i18n="priv.s5_li3">Los archivos multimedia (fotos, audios, documentos) se transfieren punto a punto entre usuarios a la velocidad nativa de la red.</li>
           </ul>
         </section>
 
         <!-- Section 6: Cero Telemetría y Publicidad -->
         <section id="telemetria" class="reveal">
-          <h2>6. Cero Telemetría y Publicidad</h2>
-          <p>
-            JPChat mantiene un compromiso absoluto de transparencia y código limpio:
-          </p>
+          <h2 data-i18n="priv.s6_title">6. Cero Telemetría y Publicidad</h2>
+          <p data-i18n="priv.s6_p">JPChat mantiene un compromiso absoluto de transparencia y código limpio:</p>
           <ul>
-            <li>Cero SDKs de publicidad o redes de anuncios invasivos.</li>
-            <li>Cero rastreadores de comportamiento (sin Google Analytics, Mixpanel, Firebase Crashlytics o Meta Pixel).</li>
-            <li>Cero registro de direcciones IP de origen vinculadas a identidades de usuario.</li>
+            <li data-i18n="priv.s6_li1">Cero SDKs de publicidad o redes de anuncios invasivos.</li>
+            <li data-i18n="priv.s6_li2">Cero rastreadores de comportamiento (sin Google Analytics, Mixpanel, Firebase Crashlytics o Meta Pixel).</li>
+            <li data-i18n="priv.s6_li3">Cero registro de direcciones IP de origen vinculadas a identidades de usuario.</li>
           </ul>
         </section>
 
         <!-- Section 7: Control del Usuario y Deslinde Legal -->
         <section id="derechos" class="reveal">
-          <h2>7. Control del Usuario y Deslinde de Responsabilidad</h2>
+          <h2 data-i18n="priv.s7_title">7. Control del Usuario y Deslinde de Responsabilidad</h2>
           <div class="legal-alert warning" style="margin-bottom: 1.2rem;">
-            <strong style="color: #FFFFFF; font-size: 1.05rem;">Deslinde Total de Responsabilidad:</strong>
-            <p style="margin-top: 0.4rem; color: #FFFFFF;">
+            <strong style="color: #FFFFFF; font-size: 1.05rem;" data-i18n="priv.s7_alert_title">Deslinde Total de Responsabilidad:</strong>
+            <p style="margin-top: 0.4rem; color: #FFFFFF;" data-i18n="priv.s7_alert_p">
               JPChat se suministra como una herramienta de software libre. Los creadores y desarrolladores no administran servidores, no moderan comunicaciones ni tienen capacidad técnica para interceptar mensajes. <strong>Cada usuario es único, libre y soberano responsable del uso que le dé a la aplicación</strong>, deslindándose los desarrolladores de toda responsabilidad legal, civil o penal derivada del mal uso que cualquier individuo pudiera realizar.
             </p>
           </div>
-          <p>
+          <p data-i18n="priv.s7_p">
             El usuario ejerce la custodia absoluta de su clave y sus datos: puede revocar claves, purgar chats o eliminar la aplicación en cualquier momento sin requerir solicitudes a terceros.
           </p>
         </section>
@@ -187,7 +189,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom" style="border: none; padding-top: 0;">
-        <div>© 2026 JPChat. Plataforma de comunicación libre y descentralizada.</div>
+        <div data-i18n="footer.copyright">© 2026 JPChat. Plataforma de comunicación libre y descentralizada.</div>
         <div style="display: flex; gap: 1.5rem;">
           <a href="index.html">Inicio</a>
           <a href="descargas.html">Descargas</a>
@@ -198,6 +200,7 @@
     </div>
   </footer>
 
+  <script src="translations.js?v=1.0"></script>
   <script src="main.js?v=3.0"></script>
 </body>
 </html>
