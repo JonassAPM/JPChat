@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyHash();
   initSmoothScroll();
   initLegalSidebarObserver();
+  initScrollReveal();
 });
 
 /**
@@ -114,6 +115,10 @@ function initTabs() {
           // Small delay for CSS opacity transition to trigger
           setTimeout(() => {
             pane.classList.add('active');
+            // Trigger visibility for reveal elements inside the active tab
+            pane.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(child => {
+              child.classList.add('visible');
+            });
           }, 20);
         } else {
           pane.classList.remove('active');
@@ -256,3 +261,47 @@ function showToast(message) {
     toast.classList.remove('show');
   }, 3200);
 }
+
+/**
+ * Scroll Entrance Reveal (Intersection Observer)
+ * Animates sections and cards when they enter the viewport
+ */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
+  if (revealElements.length === 0) return;
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback if browser doesn't support IntersectionObserver
+    revealElements.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.08
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Animate once
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(el => {
+    // Check if already in viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      // Small staggered delay for above-the-fold elements
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, 50);
+    } else {
+      revealObserver.observe(el);
+    }
+  });
+}
+
