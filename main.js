@@ -412,22 +412,16 @@ function initScrollReveal() {
 
 /**
  * Dynamic GitHub Latest Release Loader
- * Fetches the most recent release from https://github.com/JonassAPM/JPChat/releases
- * and dynamically updates the download button URL, download filename,
- * and the metadata fields: File (metaFileName) and Size (metaFileSize).
+ * Dynamically queries https://api.github.com/repos/JonassAPM/JPChat/releases/latest
+ * Extracts the real asset file name, file size, and direct download URL,
+ * and updates the page elements without requiring any static hardcoded values.
  */
-async function initLatestRelease() {
-  const downloadBtn = document.getElementById('mainDownloadBtn') || document.querySelector('.download-action-btn');
-  const metaFile = document.getElementById('metaFileName');
-  const metaSize = document.getElementById('metaFileSize');
+let latestReleasePromise = fetchLatestRelease();
 
-  if (!downloadBtn && !metaFile && !metaSize) return;
-
+async function fetchLatestRelease() {
   const CACHE_KEY = 'jpchat_latest_release_data';
   const CACHE_TIME_KEY = 'jpchat_latest_release_time';
-  const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes cache to avoid GitHub API rate limits
-
-  let releaseData = null;
+  const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes cache to prevent rate limiting
 
   try {
     const cached = localStorage.getItem(CACHE_KEY);
@@ -435,19 +429,49 @@ async function initLatestRelease() {
     const now = Date.now();
 
     if (cached && cachedTime && (now - parseInt(cachedTime, 10)) < CACHE_TTL_MS) {
-      releaseData = JSON.parse(cached);
-    } else {
-      const res = await fetch('https://api.github.com/repos/JonassAPM/JPChat/releases/latest');
-      if (res.ok) {
-        releaseData = await res.json();
-        localStorage.setItem(CACHE_KEY, JSON.stringify(releaseData));
-        localStorage.setItem(CACHE_TIME_KEY, now.toString());
-      }
+      return JSON.parse(cached);
+    }
+
+    const res = await fetch('https://api.github.com/repos/JonassAPM/JPChat/releases/latest');
+    if (res.ok) {
+      const data = await res.json();
+      localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+      localStorage.setItem(CACHE_TIME_KEY, now.toString());
+      return data;
     }
   } catch (err) {
     console.warn('JPChat: Error fetching latest release from GitHub API:', err);
   }
+  return null;
+}
 
+async function initLatestRelease() {
+  const downloadBtn = document.getElementById('mainDownloadBtn') || document.querySelector('.download-action-btn');
+  const metaFile = document.getElementById('metaFileName');
+  const metaSize = document.getElementById('metaFileSize');
+
+  if (!downloadBtn && !metaFile && !metaSize) return;
+
+  // Intercept early click if fetch is still pending
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', async (e) => {
+      const currentHref = downloadBtn.getAttribute('href');
+      if (currentHref === 'https://github.com/JonassAPM/JPChat/releases/latest' || currentHref === '#') {
+        const releaseData = await latestReleasePromise;
+        if (releaseData && releaseData.assets && releaseData.assets.length > 0) {
+          const apkAsset = releaseData.assets.find(a => a.name && a.name.endsWith('.apk')) || releaseData.assets[0];
+          if (apkAsset && apkAsset.browser_download_url) {
+            e.preventDefault();
+            downloadBtn.setAttribute('href', apkAsset.browser_download_url);
+            downloadBtn.setAttribute('download', apkAsset.name);
+            window.location.href = apkAsset.browser_download_url;
+          }
+        }
+      }
+    });
+  }
+
+  const releaseData = await latestReleasePromise;
   if (!releaseData || !releaseData.assets || releaseData.assets.length === 0) return;
 
   // Find APK asset or default to the first asset
@@ -458,7 +482,7 @@ async function initLatestRelease() {
   const fileSizeMB = (apkAsset.size / (1024 * 1024)).toFixed(1) + ' MB';
   const downloadUrl = apkAsset.browser_download_url;
 
-  // Update download button
+  // Dynamically update download button with direct URL and filename
   if (downloadBtn) {
     downloadBtn.setAttribute('href', downloadUrl);
     downloadBtn.setAttribute('download', fileName);
@@ -472,7 +496,7 @@ async function initLatestRelease() {
     }
   }
 
-  // Update File and Size in Metadata Grid
+  // Dynamically update File (Archivo) and Size (Tamaño) metadata
   if (metaFile) {
     metaFile.textContent = fileName;
   }
@@ -480,7 +504,7 @@ async function initLatestRelease() {
     metaSize.textContent = fileSizeMB;
   }
 
-  // Update i18n dictionary so dynamic language toggle keeps the updated size
+  // Update i18n dictionary so toggling language keeps the live fetched size
   if (typeof JPChatTranslations !== 'undefined') {
     if (JPChatTranslations.es) {
       JPChatTranslations.es['dl.btn_download'] = `Descargar APK (${fileSizeMB})`;
