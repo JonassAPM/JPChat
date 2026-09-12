@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initLegalSidebarObserver();
   initScrollReveal();
+  initLatestRelease();
 });
 
 /**
@@ -409,4 +410,83 @@ function initScrollReveal() {
   allRevealElements.forEach(el => revealObserver.observe(el));
 }
 
+/**
+ * Dynamic GitHub Latest Release Loader
+ * Fetches the most recent release from https://github.com/JonassAPM/JPChat/releases
+ * and dynamically updates the download button URL, download filename,
+ * and the metadata fields: File (metaFileName) and Size (metaFileSize).
+ */
+async function initLatestRelease() {
+  const downloadBtn = document.getElementById('mainDownloadBtn') || document.querySelector('.download-action-btn');
+  const metaFile = document.getElementById('metaFileName');
+  const metaSize = document.getElementById('metaFileSize');
 
+  if (!downloadBtn && !metaFile && !metaSize) return;
+
+  const CACHE_KEY = 'jpchat_latest_release_data';
+  const CACHE_TIME_KEY = 'jpchat_latest_release_time';
+  const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes cache to avoid GitHub API rate limits
+
+  let releaseData = null;
+
+  try {
+    const cached = localStorage.getItem(CACHE_KEY);
+    const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
+    const now = Date.now();
+
+    if (cached && cachedTime && (now - parseInt(cachedTime, 10)) < CACHE_TTL_MS) {
+      releaseData = JSON.parse(cached);
+    } else {
+      const res = await fetch('https://api.github.com/repos/JonassAPM/JPChat/releases/latest');
+      if (res.ok) {
+        releaseData = await res.json();
+        localStorage.setItem(CACHE_KEY, JSON.stringify(releaseData));
+        localStorage.setItem(CACHE_TIME_KEY, now.toString());
+      }
+    }
+  } catch (err) {
+    console.warn('JPChat: Error fetching latest release from GitHub API:', err);
+  }
+
+  if (!releaseData || !releaseData.assets || releaseData.assets.length === 0) return;
+
+  // Find APK asset or default to the first asset
+  const apkAsset = releaseData.assets.find(a => a.name && a.name.endsWith('.apk')) || releaseData.assets[0];
+  if (!apkAsset) return;
+
+  const fileName = apkAsset.name;
+  const fileSizeMB = (apkAsset.size / (1024 * 1024)).toFixed(1) + ' MB';
+  const downloadUrl = apkAsset.browser_download_url;
+
+  // Update download button
+  if (downloadBtn) {
+    downloadBtn.setAttribute('href', downloadUrl);
+    downloadBtn.setAttribute('download', fileName);
+
+    const btnSpan = downloadBtn.querySelector('[data-i18n="dl.btn_download"]') || downloadBtn.querySelector('span');
+    if (btnSpan) {
+      const currentLang = localStorage.getItem('jpchat_lang') || 'es';
+      btnSpan.textContent = currentLang === 'en' 
+        ? `Download APK (${fileSizeMB})` 
+        : `Descargar APK (${fileSizeMB})`;
+    }
+  }
+
+  // Update File and Size in Metadata Grid
+  if (metaFile) {
+    metaFile.textContent = fileName;
+  }
+  if (metaSize) {
+    metaSize.textContent = fileSizeMB;
+  }
+
+  // Update i18n dictionary so dynamic language toggle keeps the updated size
+  if (typeof JPChatTranslations !== 'undefined') {
+    if (JPChatTranslations.es) {
+      JPChatTranslations.es['dl.btn_download'] = `Descargar APK (${fileSizeMB})`;
+    }
+    if (JPChatTranslations.en) {
+      JPChatTranslations.en['dl.btn_download'] = `Download APK (${fileSizeMB})`;
+    }
+  }
+}
